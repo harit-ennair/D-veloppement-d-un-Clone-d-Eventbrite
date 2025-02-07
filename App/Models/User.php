@@ -11,15 +11,13 @@ class User {
     protected $created_at;
     protected $updated_at;
 
-    public function __construct($id, $email, $password, $role, $name, $avatar, $created_at, $updated_at) {
-        $this->id = $id;
+    public function __construct($email, $password, $role, $name, $avatar) {
         $this->email = $email;
         $this->password = $password;
         $this->role = $role;
         $this->name = $name;
         $this->avatar = $avatar;
-        $this->created_at = $created_at;
-        $this->updated_at = $updated_at;
+       
     }
 
     public function register() {

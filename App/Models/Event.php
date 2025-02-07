@@ -1,4 +1,6 @@
 <?php
+
+use App\Models\Organizer;
 class Event {
     private $id;
     private $title;
@@ -18,7 +20,7 @@ class Event {
     private $contact_phone;
     private $video_url;
 
-    public function __construct($id, $title, $description, $content, $thumbnail, $date, $location, $price, $capacity, $organizer_id, $category_id, $status, $created_at, $updated_at, $contact_email = null, $contact_phone = null, $video_url = null) {
+    public function __construct($id, $title, $description, $content, $thumbnail, $date, $location, $price, $capacity,Organizer $organizer,Category $category, $status, $contact_email = null, $contact_phone = null, $video_url = null) {
         $this->id = $id;
         $this->title = $title;
         $this->description = $description;
@@ -28,11 +30,9 @@ class Event {
         $this->location = $location;
         $this->price = $price;
         $this->capacity = $capacity;
-        $this->organizer_id = $organizer_id;
-        $this->category_id = $category_id;
+        $this->organizer_id = $organizer;
+        $this->category_id = $category;
         $this->status = $status;
-        $this->created_at = $created_at;
-        $this->updated_at = $updated_at;
         $this->contact_email = $contact_email;
         $this->contact_phone = $contact_phone;
         $this->video_url = $video_url;

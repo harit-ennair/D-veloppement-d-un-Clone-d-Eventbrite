@@ -6,12 +6,10 @@ class Notification {
     private $type;
     private $created_at;
 
-    public function __construct($id, $user_id, $message, $type, $created_at) {
-        $this->id = $id;
+    public function __construct($user_id, $message, $type) {
         $this->user_id = $user_id;
         $this->message = $message;
         $this->type = $type;
-        $this->created_at = $created_at;
     }
 
     public function sendNotification() {

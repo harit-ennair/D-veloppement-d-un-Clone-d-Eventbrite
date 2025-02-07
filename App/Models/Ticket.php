@@ -10,16 +10,14 @@ class Ticket {
     private $created_at;
     private $updated_at;
 
-    public function __construct($id, $event_id, $user_id, $type, $price, $qr_code, $status, $created_at, $updated_at) {
-        $this->id = $id;
+    public function __construct($event_id, $user_id, $type, $price, $qr_code, $status) {
         $this->event_id = $event_id;
         $this->user_id = $user_id;
         $this->type = $type;
         $this->price = $price;
         $this->qr_code = $qr_code;
         $this->status = $status;
-        $this->created_at = $created_at;
-        $this->updated_at = $updated_at;
+        
     }
 
     public function bookTicket() {

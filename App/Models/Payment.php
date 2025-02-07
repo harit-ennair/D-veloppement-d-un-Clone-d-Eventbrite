@@ -8,14 +8,12 @@ class Payment {
     private $created_at;
     private $updated_at;
 
-    public function __construct($id, $ticket_id, $amount, $payment_method, $status, $created_at, $updated_at) {
-        $this->id = $id;
+    public function __construct($ticket_id, $amount, $payment_method, $status) {
+        
         $this->ticket_id = $ticket_id;
         $this->amount = $amount;
         $this->payment_method = $payment_method;
         $this->status = $status;
-        $this->created_at = $created_at;
-        $this->updated_at = $updated_at;
     }
 
     public function processPayment() {
