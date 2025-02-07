@@ -1,4 +1,7 @@
--- Create the users table
+-- Create the ENUM type for user status
+CREATE TYPE user_status_enum AS ENUM ('active', 'inactive', 'banned');
+
+-- Create the users table with ENUM for status
 CREATE TABLE users (
     id SERIAL PRIMARY KEY,
     email VARCHAR(255) NOT NULL UNIQUE,
@@ -6,10 +9,22 @@ CREATE TABLE users (
     role VARCHAR(50) CHECK (role IN ('admin', 'organizer', 'participant')),
     name VARCHAR(255),
     avatar VARCHAR(255),
-    status VARCHAR(50) CHECK (status IN ('active', 'inactive', 'banned')),
+    status user_status_enum DEFAULT 'active',
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
+
+-- Create a trigger to set status to 'inactive' if the role is 'organizer'
+CREATE TRIGGER set_organizer_status_inactive_trigger
+BEFORE INSERT ON users
+FOR EACH ROW
+EXECUTE FUNCTION (
+    IF NEW.role = 'organizer' THEN
+        NEW.status := 'inactive';
+    END IF;
+    RETURN NEW;
+) LANGUAGE plpgsql;
+
 
 -- Create the categories table
 CREATE TABLE categories (
@@ -38,12 +53,13 @@ CREATE TABLE events (
     video_url VARCHAR(255)
 );
 
+
 -- Create the tickets table
 CREATE TABLE tickets (
     id SERIAL PRIMARY KEY,
     event_id INT REFERENCES events(id),
     user_id INT REFERENCES users(id),
-    type VARCHAR(50) CHECK (type IN ('free', 'paid', 'VIP', 'early bird')),
+    type VARCHAR(50) CHECK (type IN ('free', 'paid', 'VIP')),
     price DECIMAL(10, 2),
     qr_code VARCHAR(255),
     status VARCHAR(50) CHECK (status IN ('booked', 'cancelled')),
