@@ -1,9 +1,10 @@
 <?php
+$_SERVER['DOCUMENT_ROOT']="C:/laragon/www/D-veloppement-d-un-Clone-d-Eventbrite";
 
-require_once $_SERVER['DOCUMENT_ROOT']."/vendor/autoload.php";
+// print_r($_SERVER);
+require_once $_SERVER['DOCUMENT_ROOT'].'/vendor/autoload.php';
 
 use Core\Router;
-use App\Controllers\CarController;
 
 
 $router = new Router();

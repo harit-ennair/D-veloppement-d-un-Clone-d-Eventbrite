@@ -1,0 +1,8 @@
+<?php
+namespace App\Controllers;
+
+class Pages{
+    public function home()  {
+        require_once $_SERVER['DOCUMENT_ROOT']."/App/Views/pages/page.php";
+    }
+}
