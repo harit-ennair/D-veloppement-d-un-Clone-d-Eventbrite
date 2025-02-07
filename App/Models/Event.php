@@ -3,6 +3,8 @@ class Event {
     private $id;
     private $title;
     private $description;
+    private $content;
+    private $thumbnail;
     private $date;
     private $location;
     private $price;
@@ -12,11 +14,16 @@ class Event {
     private $status;
     private $created_at;
     private $updated_at;
+    private $contact_email;
+    private $contact_phone;
+    private $video_url;
 
-    public function __construct($id, $title, $description, $date, $location, $price, $capacity, $organizer_id, $category_id, $status, $created_at, $updated_at) {
+    public function __construct($id, $title, $description, $content, $thumbnail, $date, $location, $price, $capacity, $organizer_id, $category_id, $status, $created_at, $updated_at, $contact_email = null, $contact_phone = null, $video_url = null) {
         $this->id = $id;
         $this->title = $title;
         $this->description = $description;
+        $this->content = $content;
+        $this->thumbnail = $thumbnail;
         $this->date = $date;
         $this->location = $location;
         $this->price = $price;
@@ -26,26 +33,75 @@ class Event {
         $this->status = $status;
         $this->created_at = $created_at;
         $this->updated_at = $updated_at;
+        $this->contact_email = $contact_email;
+        $this->contact_phone = $contact_phone;
+        $this->video_url = $video_url;
     }
 
+    // Method to create a new event
     public function createEvent() {
-        // Create event logic
+        // Logic to create a new event in the database
+        // Example:
+        // $db->insert('events', ['title' => $this->title, 'description' => $this->description, ...]);
     }
 
+    // Method to update an existing event
     public function updateEvent() {
-        // Update event logic
+        // Logic to update an existing event in the database
+        // Example:
+        // $db->update('events', ['title' => $this->title, 'description' => $this->description, ...], ['id' => $this->id]);
     }
 
+    // Method to delete an event
     public function deleteEvent() {
-        // Delete event logic
+        // Logic to delete an event from the database
+        // Example:
+        // $db->delete('events', ['id' => $this->id]);
     }
 
+    // Method to validate an event (e.g., by an admin)
     public function validateEvent() {
-        // Validate event logic
+        // Logic to validate an event
+        // Example:
+        // $this->status = 'validated';
+        // $db->update('events', ['status' => $this->status], ['id' => $this->id]);
     }
 
+    // Method to get event details
     public function getEventDetails() {
-        // Get event details logic
+        // Logic to retrieve event details from the database
+        // Example:
+        // return $db->select('events', ['id' => $this->id]);
+    }
+
+    // Method to set the thumbnail image
+    public function setThumbnail($thumbnail) {
+        $this->thumbnail = $thumbnail;
+    }
+
+    // Method to get the thumbnail image
+    public function getThumbnail() {
+        return $this->thumbnail;
+    }
+
+    // Method to set the contact email
+    public function setContactEmail($contact_email) {
+        $this->contact_email = $contact_email;
+    }
+
+    // Method to get the contact email
+    public function getContactEmail() {
+        return $this->contact_email;
+    }
+
+    // Method to set the contact phone
+    public function setContactPhone($contact_phone) {
+        $this->contact_phone = $contact_phone;
+    }
+
+    // Method to get the contact phone
+    public function getContactPhone() {
+        return $this->contact_phone;
     }
 
     // Getters and setters
@@ -71,6 +127,14 @@ class Event {
 
     public function setDescription($description) {
         $this->description = $description;
+    }
+
+    public function getContent() {
+        return $this->content;
+    }
+
+    public function setContent($content) {
+        $this->content = $content;
     }
 
     public function getDate() {
@@ -143,6 +207,14 @@ class Event {
 
     public function setUpdatedAt($updated_at) {
         $this->updated_at = $updated_at;
+    }
+
+    public function getVideoUrl() {
+        return $this->video_url;
+    }
+
+    public function setVideoUrl($video_url) {
+        $this->video_url = $video_url;
     }
 }
 ?>
