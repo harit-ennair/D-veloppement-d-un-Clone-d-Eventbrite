@@ -11,7 +11,11 @@ CREATE TABLE users (
     avatar VARCHAR(255),
     status user_status_enum DEFAULT 'active',
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    -- hamza elboukri 
+    -- sat side token dyalee dispier 3la hsab forget password 
+
+
 );
 
 -- Create a trigger to set status to 'inactive' if the role is 'organizer'
