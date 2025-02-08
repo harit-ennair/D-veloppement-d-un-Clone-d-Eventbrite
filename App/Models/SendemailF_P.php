@@ -1,9 +1,6 @@
 <?php
 // hade page dyale send eanil bache ijih fha line ta3 updet passwrod
-
-
-
-namespace src\Forgetpassword;
+namespace app\Models;
 require __DIR__ . '/../../vendor/autoload.php';
 
 
@@ -40,7 +37,7 @@ class SendEmail {
     public function sendResetEmail($email, $token) {
         
         try {
-            $resetLink = "http://localhost/mini_udemy/src/Forgetpassword/Reset_Password01.php?token=" . $token . "&email=" . urlencode($email);
+            $resetLink = "http://localhost/D-veloppement-d-un-Clone-d-Eventbrite/App/Views/pages/ResetPassword.php?token=" . $token . "&email=" . urlencode($email);
             
             $this->mailer->clearAddresses(); 
             $this->mailer->setFrom('hamzaelboukri01@gmail.com', 'Game Store');
