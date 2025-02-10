@@ -102,6 +102,12 @@ class AuthController {
 }
 
 public function logIn()  {
+
+    if($this->auth->isLoggedIn()){
+            header("location: /");
+            exit();
+        }
+
     if(isset($_POST['submit'])){
         
         $email = htmlspecialchars($_POST['email']);
