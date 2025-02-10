@@ -14,16 +14,22 @@ CREATE TABLE users (
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
--- Create a trigger to set status to 'inactive' if the role is 'organizer'
-CREATE TRIGGER set_organizer_status_inactive_trigger
-BEFORE INSERT ON users
-FOR EACH ROW
-EXECUTE FUNCTION (
+-- Create a function to set status to 'inactive' if the role is 'organizer'
+CREATE OR REPLACE FUNCTION set_organizer_status_inactive()
+RETURNS TRIGGER AS $$
+BEGIN
     IF NEW.role = 'organizer' THEN
         NEW.status := 'inactive';
     END IF;
     RETURN NEW;
-) LANGUAGE plpgsql;
+END;
+$$ LANGUAGE plpgsql;
+
+-- Create a trigger to call the function before inserting a new row
+CREATE TRIGGER set_organizer_status_inactive_trigger
+BEFORE INSERT ON users
+FOR EACH ROW
+EXECUTE FUNCTION set_organizer_status_inactive();
 
 
 -- Create the categories table

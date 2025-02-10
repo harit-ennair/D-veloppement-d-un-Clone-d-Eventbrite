@@ -1,5 +1,8 @@
 <?php
 namespace App\Models;
+require_once $_SERVER['DOCUMENT_ROOT']."/vendor/autoload.php";
+use Config\Database;
+// use Database\Database;
 
 class User {
     protected $id;
@@ -10,22 +13,38 @@ class User {
     protected $avatar;
     protected $created_at;
     protected $updated_at;
+    protected static $pdo;
 
-    public function __construct($email, $password, $role, $name, $avatar) {
+    public function __construct($email, $password, $role, $name, $avatar=null) {
         $this->email = $email;
         $this->password = $password;
         $this->role = $role;
         $this->name = $name;
         $this->avatar = $avatar;
+        self::$pdo=Database::getConnection();
        
     }
 
-    public function register() {
-        // Registration logic
+    
+    public function emailExiste(){
+        $sql = "SELECT email FROM users WHERE email = ?";
+        $stmt = self::$pdo->prepare($sql);
+        $stmt->execute([$this->email]);
+        $result = $stmt->fetchAll();
+        $emailExiste=false;
+        if (count($result) > 0) {
+            $emailExiste=true;
+        } else {
+            $emailExiste=false;
+        }
+        return $emailExiste;
     }
-
     public function login() {
-        // Login logic
+        // if(!$this->emailExiste()){
+        //     throw new \Exception("This email does not exist");
+        // }esle{
+
+        // }
     }
 
     public function logout() {
