@@ -104,23 +104,23 @@ class AuthController {
 public function logIn()  {
     if(isset($_POST['submit'])){
         
-        $email=htmlspecialchars($_POST['email']);
-        $password=htmlspecialchars($_POST['password']);
-        $password=password_verify($password,PASSWORD_BCRYPT);
-    try{
-        $user=new User($email,$password);
-        $user=$user->login();
-        // $this->auth->login([]);
-        $this->auth->login($user);
-    }
-    catch(\Exception $th){
+        $email = htmlspecialchars($_POST['email']);
+        $password = htmlspecialchars($_POST['password']);
         
-        $this->session->set('error', ['email' => $th->getMessage()]);
-        $this->session->set("old",['email' => $email])  ;
-        header('Location: /logIn.php');
+        try{
+            $user = new User($email, $password);
+            $user = $user->login();
+            $this->auth->login($user);
+            header('Location: /');
+            exit;
+        }
+        catch(\Exception $th){
+            $this->session->set('error', ['email' => $th->getMessage()]);
+            $this->session->set("old", ['email' => $email]);
+            header('Location: /logIn');
+            exit;
+        }
     }
-}
-require_once $_SERVER['DOCUMENT_ROOT']."/App/Views/login.php";
-
+    require_once $_SERVER['DOCUMENT_ROOT']."/App/Views/login.php";
 }
 }

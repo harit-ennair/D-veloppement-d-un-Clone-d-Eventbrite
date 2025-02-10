@@ -1,4 +1,12 @@
-<?php include_once 'layoutDashboard/header.php'?>
+<?php include_once 'layoutDashboard/header.php';
+$error=$email="";
+$error=$this->session->get('error','email');
+$email=$this->session->get('old','email');
+// echo $email;
+// echo $error;
+// $this->session->remove('error');
+// $this->session->remove('old');
+?>
 
 <!--wrapper-->
 <div class="wrapper">
@@ -20,8 +28,9 @@
 										<form class="row g-3" method="POST">
 											<div class="col-12">
 												<label for="inputEmailAddress" class="form-label">Email</label>
-												<input type="email" name="email" value="<?=$this->session->get('old','email') ?>" class="form-control" id="inputEmailAddress" placeholder="jhon@example.com">
+												<input type="email" name="email" value="<?=$email ?>" class="form-control" id="inputEmailAddress" placeholder="jhon@example.com">
 											</div>
+											<h1 style="color:red;font-size: 15px;"><?=$error ?></h1>
 											<div class="col-12">
 												<label for="inputChoosePassword" class="form-label">Password</label>
 												<div class="input-group" id="show_hide_password">
@@ -70,4 +79,5 @@
 	</div>
 	<!--end wrapper-->
 	
-<?php include_once 'layoutDashboard/footer.php'?>
+<?php include_once 'layoutDashboard/footer.php';
+?>

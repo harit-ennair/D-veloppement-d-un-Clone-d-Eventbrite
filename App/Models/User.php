@@ -44,13 +44,13 @@ class User {
             throw new \Exception("This email does not exist");
         }
         else{
-            $sql="SELECT id,name,email,role FROM users WHERE email=:email";
+            $sql="SELECT id,name,email,password,role FROM users WHERE email=:email";
             $stmt=self::$pdo->prepare($sql);
             $stmt->execute([
                 ":email"=>$this->email
             ]);
             $result=$stmt->fetch(\PDO::FETCH_ASSOC);
-            if($result['password']!=$this->password){
+            if(!password_verify($this->password,$result['password'])){
                 throw new \Exception("invalid password");
             }
             return $result;
