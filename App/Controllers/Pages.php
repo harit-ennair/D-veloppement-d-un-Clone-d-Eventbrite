@@ -7,7 +7,7 @@ class Pages{
 
     }
     public function signUp() {
-        require_once $_SERVER['DOCUMENT_ROOT']."/App/Views/pages/page.php";
+        require_once $_SERVER['DOCUMENT_ROOT']."/App/Views/register.php";
         
     }
     

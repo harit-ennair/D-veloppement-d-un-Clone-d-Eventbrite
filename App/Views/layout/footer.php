@@ -17,13 +17,13 @@
         <!--Site Footer Start-->
         <footer class="site-footer">
             <div class="site-footer__shape-1 float-bob-y">
-                <img src="../assets1/images/shapes/site-footer-shape-1.png" alt="">
+                <img src="/Public/assets1/images/shapes/site-footer-shape-1.png" alt="">
             </div>
             <div class="site-footer__top">
                 <div class="container">
                     <div class="site-footer__top-inner">
                         <div class="site-footer__logo">
-                            <a href="index.html"><img src="../assets1/images/resources/site-footer-logo-1.png" alt=""></a>
+                            <a href="index.html"><img src="/Public/assets1/images/resources/site-footer-logo-1.png" alt=""></a>
                         </div>
                         <div class="site-footer__social">
                             <a href="#"><i class="icon-facebook"></i></a>
@@ -153,7 +153,7 @@
             <span class="mobile-nav__close mobile-nav__toggler"><i class="fa fa-times"></i></span>
 
             <div class="logo-box">
-                <a href="index.html" aria-label="logo image"><img src="../assets1/images/resources/logo-1.png" width="150"
+                <a href="index.html" aria-label="logo image"><img src="/Public/assets1/images/resources/logo-1.png" width="150"
                         alt="" /></a>
             </div>
             <!-- /.logo-box -->
@@ -205,32 +205,32 @@
     <a href="#" data-target="html" class="scroll-to-target scroll-to-top"><i class="fas fa-arrow-up"></i></a>
 
 
-    <script src="../assets1/vendors/jquery/jquery-3.6.0.min.js"></script>
-    <script src="../assets1/vendors/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="../assets1/vendors/jarallax/jarallax.min.js"></script>
-    <script src="../assets1/vendors/jquery-ajaxchimp/jquery.ajaxchimp.min.js"></script>
-    <script src="../assets1/vendors/jquery-appear/jquery.appear.min.js"></script>
-    <script src="../assets1/vendors/jquery-magnific-popup/jquery.magnific-popup.min.js"></script>
-    <script src="../assets1/vendors/jquery-validate/jquery.validate.min.js"></script>
-    <script src="../assets1/vendors/odometer/odometer.min.js"></script>
-    <script src="../assets1/vendors/swiper/swiper.min.js"></script>
-    <script src="../assets1/vendors/wnumb/wNumb.min.js"></script>
-    <script src="../assets1/vendors/wow/wow.js"></script>
-    <script src="../assets1/vendors/isotope/isotope.js"></script>
-    <script src="../assets1/vendors/owl-carousel/owl.carousel.min.js"></script>
-    <script src="../assets1/vendors/bootstrap-select/js/bootstrap-select.min.js"></script>
-    <script src="../assets1/vendors/jquery-ui/jquery-ui.js"></script>
-    <script src="../assets1/vendors/nice-select/jquery.nice-select.min.js"></script>
-    <script src="../assets1/vendors/countdown/countdown.min.js"></script>
-    <script src="../assets1/vendors/marque/marquee.min.js"></script>
-    <script src="../assets1/vendors/sidebar-content/jquery-sidebar-content.js"></script>
+    <script src="/Public/assets1/vendors/jquery/jquery-3.6.0.min.js"></script>
+    <script src="/Public/assets1/vendors/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/Public/assets1/vendors/jarallax/jarallax.min.js"></script>
+    <script src="/Public/assets1/vendors/jquery-ajaxchimp/jquery.ajaxchimp.min.js"></script>
+    <script src="/Public/assets1/vendors/jquery-appear/jquery.appear.min.js"></script>
+    <script src="/Public/assets1/vendors/jquery-magnific-popup/jquery.magnific-popup.min.js"></script>
+    <script src="/Public/assets1/vendors/jquery-validate/jquery.validate.min.js"></script>
+    <script src="/Public/assets1/vendors/odometer/odometer.min.js"></script>
+    <script src="/Public/assets1/vendors/swiper/swiper.min.js"></script>
+    <script src="/Public/assets1/vendors/wnumb/wNumb.min.js"></script>
+    <script src="/Public/assets1/vendors/wow/wow.js"></script>
+    <script src="/Public/assets1/vendors/isotope/isotope.js"></script>
+    <script src="/Public/assets1/vendors/owl-carousel/owl.carousel.min.js"></script>
+    <script src="/Public/assets1/vendors/bootstrap-select/js/bootstrap-select.min.js"></script>
+    <script src="/Public/assets1/vendors/jquery-ui/jquery-ui.js"></script>
+    <script src="/Public/assets1/vendors/nice-select/jquery.nice-select.min.js"></script>
+    <script src="/Public/assets1/vendors/countdown/countdown.min.js"></script>
+    <script src="/Public/assets1/vendors/marque/marquee.min.js"></script>
+    <script src="/Public/assets1/vendors/sidebar-content/jquery-sidebar-content.js"></script>
 
 
 
 
 
     <!-- template js -->
-    <script src="../assets1/js/eventflow.js"></script>
+    <script src="/Public/assets1/js/eventflow.js"></script>
 </body>
 
 </html>

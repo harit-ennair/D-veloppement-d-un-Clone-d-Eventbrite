@@ -21,22 +21,22 @@
 
                     <div class="swiper-slide">
                         <div class="main-slider__img">
-                            <img src="../assets1/images/resources/main-slider-img-1-1.jpg" alt="">
+                            <img src="/Public/assets1/images/resources/main-slider-img-1-1.jpg" alt="">
                         </div>
                         <div class="main-slider__shpae-1">
-                            <img src="../assets1/images/shapes/main-slider-shape-1.png" alt="">
+                            <img src="/Public/assets1/images/shapes/main-slider-shape-1.png" alt="">
                         </div>
                         <div class="main-slider__shpae-2">
-                            <img src="../assets1/images/shapes/main-slider-shape-2.png" alt="">
+                            <img src="/Public/assets1/images/shapes/main-slider-shape-2.png" alt="">
                         </div>
                         <div class="main-slider__start-1">
-                            <img src="../assets1/images/shapes/main-slider-star-1.png" alt="">
+                            <img src="/Public/assets1/images/shapes/main-slider-star-1.png" alt="">
                         </div>
                         <div class="main-slider__start-2 zoominout">
-                            <img src="../assets1/images/shapes/main-slider-star-2.png" alt="">
+                            <img src="/Public/assets1/images/shapes/main-slider-star-2.png" alt="">
                         </div>
                         <div class="main-slider__start-3">
-                            <img src="../assets1/images/shapes/main-slider-star-3.png" alt="">
+                            <img src="/Public/assets1/images/shapes/main-slider-star-3.png" alt="">
                         </div>
                         <div class="container">
                             <div class="row">
@@ -78,22 +78,22 @@
 
                     <div class="swiper-slide">
                         <div class="main-slider__img">
-                            <img src="../assets1/images/resources/main-slider-img-1-2.jpg" alt="">
+                            <img src="/Public/assets1/images/resources/main-slider-img-1-2.jpg" alt="">
                         </div>
                         <div class="main-slider__shpae-1">
-                            <img src="../assets1/images/shapes/main-slider-shape-1.png" alt="">
+                            <img src="/Public/assets1/images/shapes/main-slider-shape-1.png" alt="">
                         </div>
                         <div class="main-slider__shpae-2">
-                            <img src="../assets1/images/shapes/main-slider-shape-2.png" alt="">
+                            <img src="/Public/assets1/images/shapes/main-slider-shape-2.png" alt="">
                         </div>
                         <div class="main-slider__start-1">
-                            <img src="../assets1/images/shapes/main-slider-star-1.png" alt="">
+                            <img src="/Public/assets1/images/shapes/main-slider-star-1.png" alt="">
                         </div>
                         <div class="main-slider__start-2 zoominout">
-                            <img src="../assets1/images/shapes/main-slider-star-2.png" alt="">
+                            <img src="/Public/assets1/images/shapes/main-slider-star-2.png" alt="">
                         </div>
                         <div class="main-slider__start-3">
-                            <img src="../assets1/images/shapes/main-slider-star-3.png" alt="">
+                            <img src="/Public/assets1/images/shapes/main-slider-star-3.png" alt="">
                         </div>
                         <div class="container">
                             <div class="row">
@@ -135,22 +135,22 @@
 
                     <div class="swiper-slide">
                         <div class="main-slider__img">
-                            <img src="../assets1/images/resources/main-slider-img-1-3.jpg" alt="">
+                            <img src="/Public/assets1/images/resources/main-slider-img-1-3.jpg" alt="">
                         </div>
                         <div class="main-slider__shpae-1">
-                            <img src="../assets1/images/shapes/main-slider-shape-1.png" alt="">
+                            <img src="/Public/assets1/images/shapes/main-slider-shape-1.png" alt="">
                         </div>
                         <div class="main-slider__shpae-2">
-                            <img src="../assets1/images/shapes/main-slider-shape-2.png" alt="">
+                            <img src="/Public/assets1/images/shapes/main-slider-shape-2.png" alt="">
                         </div>
                         <div class="main-slider__start-1">
-                            <img src="../assets1/images/shapes/main-slider-star-1.png" alt="">
+                            <img src="/Public/assets1/images/shapes/main-slider-star-1.png" alt="">
                         </div>
                         <div class="main-slider__start-2 zoominout">
-                            <img src="../assets1/images/shapes/main-slider-star-2.png" alt="">
+                            <img src="/Public/assets1/images/shapes/main-slider-star-2.png" alt="">
                         </div>
                         <div class="main-slider__start-3">
-                            <img src="../assets1/images/shapes/main-slider-star-3.png" alt="">
+                            <img src="/Public/assets1/images/shapes/main-slider-star-3.png" alt="">
                         </div>
                         <div class="container">
                             <div class="row">
@@ -266,11 +266,11 @@
                 <ul class="sliding-text__list list-unstyled marquee_mode">
                     <li>
                         <h2 data-hover="Magic of Events" class="sliding-text__title">Magic of Events
-                            <img src="../assets1/images/icon/star-icon.png" alt=""></h2>
+                            <img src="/Public/assets1/images/icon/star-icon.png" alt=""></h2>
                     </li>
                     <li>
                         <h2 data-hover=" Celebrate Life" class="sliding-text__title"> Celebrate Life
-                            <img src="../assets1/images/icon/star-icon.png" alt=""></h2>
+                            <img src="/Public/assets1/images/icon/star-icon.png" alt=""></h2>
                     </li>
                 </ul>
             </div>
@@ -316,7 +316,7 @@
                         </li>
                     </ul>
                     <div class="event-one__img-box">
-                        <img src="../assets1/images/resources/event-one-img-1.jpg" alt="">
+                        <img src="/Public/assets1/images/resources/event-one-img-1.jpg" alt="">
                     </div>
                 </div>
             </div>
@@ -362,7 +362,7 @@
                     <div class="col-xl-6">
                         <div class="buy-ticket__right wow fadeInRight" data-wow-delay="300ms">
                             <div class="buy-ticket__img">
-                                <img src="../assets1/images/resources/buy-ticket-img.jpg" alt="">
+                                <img src="/Public/assets1/images/resources/buy-ticket-img.jpg" alt="">
                             </div>
                         </div>
                     </div>
@@ -386,7 +386,7 @@
                         <div class="team-one__single">
                             <div class="team-one__img-box">
                                 <div class="team-one__img">
-                                    <img src="../assets1/images/team/team-1-1.jpg" alt="">
+                                    <img src="/Public/assets1/images/team/team-1-1.jpg" alt="">
                                     <div class="team-one__content">
                                         <h4 class="team-one__name"><a href="team-details.html">David Beckham</a></h4>
                                         <p class="team-one__sub-title">Speaker</p>
@@ -409,7 +409,7 @@
                         <div class="team-one__single">
                             <div class="team-one__img-box">
                                 <div class="team-one__img">
-                                    <img src="../assets1/images/team/team-1-2.jpg" alt="">
+                                    <img src="/Public/assets1/images/team/team-1-2.jpg" alt="">
                                     <div class="team-one__content">
                                         <h4 class="team-one__name"><a href="team-details.html">David Betman</a></h4>
                                         <p class="team-one__sub-title">Singer</p>
@@ -432,7 +432,7 @@
                         <div class="team-one__single">
                             <div class="team-one__img-box">
                                 <div class="team-one__img">
-                                    <img src="../assets1/images/team/team-1-3.jpg" alt="">
+                                    <img src="/Public/assets1/images/team/team-1-3.jpg" alt="">
                                     <div class="team-one__content">
                                         <h4 class="team-one__name"><a href="team-details.html">Jessica Brown</a></h4>
                                         <p class="team-one__sub-title">Content Creator</p>
@@ -472,7 +472,7 @@
                                     celebration a <br> From weddings and birthdays to conferences </p>
                                 <div class="event-direction__call">
                                     <div class="event-direction__call-icon">
-                                        <img src="../assets1/images/icon/event-direction-chat-icon.png" alt="">
+                                        <img src="/Public/assets1/images/icon/event-direction-chat-icon.png" alt="">
                                     </div>
                                     <div class="event-direction__call-content">
                                         <p>Call Us</p>
@@ -542,7 +542,7 @@
                     <div class="col-xl-3 col-lg-6 col-md-6">
                         <div class="gallery-one__single">
                             <div class="gallery-one__img">
-                                <img src="../assets1/images/gallery/gallery-1-1.jpg" alt="">
+                                <img src="/Public/assets1/images/gallery/gallery-1-1.jpg" alt="">
                                 <div class="gallery-one__content">
                                     <div class="gallery-one__sub-title-box">
                                         <div class="gallery-one__sub-title-shape"></div>
@@ -557,7 +557,7 @@
                     <div class="col-xl-3 col-lg-6 col-md-6">
                         <div class="gallery-one__single">
                             <div class="gallery-one__img">
-                                <img src="../assets1/images/gallery/gallery-1-2.jpg" alt="">
+                                <img src="/Public/assets1/images/gallery/gallery-1-2.jpg" alt="">
                                 <div class="gallery-one__content">
                                     <div class="gallery-one__sub-title-box">
                                         <div class="gallery-one__sub-title-shape"></div>
@@ -572,7 +572,7 @@
                     <div class="col-xl-3 col-lg-6 col-md-6">
                         <div class="gallery-one__single">
                             <div class="gallery-one__img">
-                                <img src="../assets1/images/gallery/gallery-1-3.jpg" alt="">
+                                <img src="/Public/assets1/images/gallery/gallery-1-3.jpg" alt="">
                                 <div class="gallery-one__content">
                                     <div class="gallery-one__sub-title-box">
                                         <div class="gallery-one__sub-title-shape"></div>
@@ -587,7 +587,7 @@
                     <div class="col-xl-3 col-lg-6 col-md-6">
                         <div class="gallery-one__single">
                             <div class="gallery-one__img">
-                                <img src="../assets1/images/gallery/gallery-1-4.jpg" alt="">
+                                <img src="/Public/assets1/images/gallery/gallery-1-4.jpg" alt="">
                                 <div class="gallery-one__content">
                                     <div class="gallery-one__sub-title-box">
                                         <div class="gallery-one__sub-title-shape"></div>
@@ -602,7 +602,7 @@
                     <div class="col-xl-3 col-lg-6 col-md-6">
                         <div class="gallery-one__single">
                             <div class="gallery-one__img">
-                                <img src="../assets1/images/gallery/gallery-1-5.jpg" alt="">
+                                <img src="/Public/assets1/images/gallery/gallery-1-5.jpg" alt="">
                                 <div class="gallery-one__content">
                                     <div class="gallery-one__sub-title-box">
                                         <div class="gallery-one__sub-title-shape"></div>
@@ -617,7 +617,7 @@
                     <div class="col-xl-3 col-lg-6 col-md-6">
                         <div class="gallery-one__single">
                             <div class="gallery-one__img">
-                                <img src="../assets1/images/gallery/gallery-1-6.jpg" alt="">
+                                <img src="/Public/assets1/images/gallery/gallery-1-6.jpg" alt="">
                                 <div class="gallery-one__content">
                                     <div class="gallery-one__sub-title-box">
                                         <div class="gallery-one__sub-title-shape"></div>
@@ -632,7 +632,7 @@
                     <div class="col-xl-3 col-lg-6 col-md-6">
                         <div class="gallery-one__single">
                             <div class="gallery-one__img">
-                                <img src="../assets1/images/gallery/gallery-1-7.jpg" alt="">
+                                <img src="/Public/assets1/images/gallery/gallery-1-7.jpg" alt="">
                                 <div class="gallery-one__content">
                                     <div class="gallery-one__sub-title-box">
                                         <div class="gallery-one__sub-title-shape"></div>
@@ -647,7 +647,7 @@
                     <div class="col-xl-6 col-lg-6 col-md-6">
                         <div class="gallery-one__single">
                             <div class="gallery-one__img">
-                                <img src="../assets1/images/gallery/gallery-1-8.jpg" alt="">
+                                <img src="/Public/assets1/images/gallery/gallery-1-8.jpg" alt="">
                                 <div class="gallery-one__content">
                                     <div class="gallery-one__sub-title-box">
                                         <div class="gallery-one__sub-title-shape"></div>
@@ -662,7 +662,7 @@
                     <div class="col-xl-3 col-lg-6 col-md-6">
                         <div class="gallery-one__single">
                             <div class="gallery-one__img">
-                                <img src="../assets1/images/gallery/gallery-1-9.jpg" alt="">
+                                <img src="/Public/assets1/images/gallery/gallery-1-9.jpg" alt="">
                                 <div class="gallery-one__content">
                                     <div class="gallery-one__sub-title-box">
                                         <div class="gallery-one__sub-title-shape"></div>
@@ -717,7 +717,7 @@
                                                 of <br> an individual's professional work</p>
                                         </div>
                                         <div class="schedule-one__img">
-                                            <img src="../assets1/images/resources/schedule-one-1-1.jpg" alt="">
+                                            <img src="/Public/assets1/images/resources/schedule-one-1-1.jpg" alt="">
                                         </div>
                                         <div class="schedule-one__address-and-btn-box">
                                             <ul class="list-unstyled schedule-one__address">
@@ -754,7 +754,7 @@
                                                 of <br> an individual's professional work</p>
                                         </div>
                                         <div class="schedule-one__img">
-                                            <img src="../assets1/images/resources/schedule-one-1-2.jpg" alt="">
+                                            <img src="/Public/assets1/images/resources/schedule-one-1-2.jpg" alt="">
                                         </div>
                                         <div class="schedule-one__address-and-btn-box">
                                             <ul class="list-unstyled schedule-one__address">
@@ -790,7 +790,7 @@
                                                 of <br> an individual's professional work</p>
                                         </div>
                                         <div class="schedule-one__img">
-                                            <img src="../assets1/images/resources/schedule-one-1-3.jpg" alt="">
+                                            <img src="/Public/assets1/images/resources/schedule-one-1-3.jpg" alt="">
                                         </div>
                                         <div class="schedule-one__address-and-btn-box">
                                             <ul class="list-unstyled schedule-one__address">
@@ -831,7 +831,7 @@
                                                 of <br> an individual's professional work</p>
                                         </div>
                                         <div class="schedule-one__img">
-                                            <img src="../assets1/images/resources/schedule-one-1-4.jpg" alt="">
+                                            <img src="/Public/assets1/images/resources/schedule-one-1-4.jpg" alt="">
                                         </div>
                                         <div class="schedule-one__address-and-btn-box">
                                             <ul class="list-unstyled schedule-one__address">
@@ -868,7 +868,7 @@
                                                 of <br> an individual's professional work</p>
                                         </div>
                                         <div class="schedule-one__img">
-                                            <img src="../assets1/images/resources/schedule-one-1-5.jpg" alt="">
+                                            <img src="/Public/assets1/images/resources/schedule-one-1-5.jpg" alt="">
                                         </div>
                                         <div class="schedule-one__address-and-btn-box">
                                             <ul class="list-unstyled schedule-one__address">
@@ -904,7 +904,7 @@
                                                 of <br> an individual's professional work</p>
                                         </div>
                                         <div class="schedule-one__img">
-                                            <img src="../assets1/images/resources/schedule-one-1-6.jpg" alt="">
+                                            <img src="/Public/assets1/images/resources/schedule-one-1-6.jpg" alt="">
                                         </div>
                                         <div class="schedule-one__address-and-btn-box">
                                             <ul class="list-unstyled schedule-one__address">
@@ -945,7 +945,7 @@
                                                 of <br> an individual's professional work</p>
                                         </div>
                                         <div class="schedule-one__img">
-                                            <img src="../assets1/images/resources/schedule-one-1-7.jpg" alt="">
+                                            <img src="/Public/assets1/images/resources/schedule-one-1-7.jpg" alt="">
                                         </div>
                                         <div class="schedule-one__address-and-btn-box">
                                             <ul class="list-unstyled schedule-one__address">
@@ -982,7 +982,7 @@
                                                 of <br> an individual's professional work</p>
                                         </div>
                                         <div class="schedule-one__img">
-                                            <img src="../assets1/images/resources/schedule-one-1-8.jpg" alt="">
+                                            <img src="/Public/assets1/images/resources/schedule-one-1-8.jpg" alt="">
                                         </div>
                                         <div class="schedule-one__address-and-btn-box">
                                             <ul class="list-unstyled schedule-one__address">
@@ -1018,7 +1018,7 @@
                                                 of <br> an individual's professional work</p>
                                         </div>
                                         <div class="schedule-one__img">
-                                            <img src="../assets1/images/resources/schedule-one-1-9.jpg" alt="">
+                                            <img src="/Public/assets1/images/resources/schedule-one-1-9.jpg" alt="">
                                         </div>
                                         <div class="schedule-one__address-and-btn-box">
                                             <ul class="list-unstyled schedule-one__address">
@@ -1099,52 +1099,52 @@
                         <div class="swiper-wrapper">
                             <div class="swiper-slide">
                                 <div class="swiper-slide__img">
-                                    <a href="#"><img src="../assets1/images/brand/brand-1-1.png" alt=""></a>
+                                    <a href="#"><img src="/Public/assets1/images/brand/brand-1-1.png" alt=""></a>
                                 </div>
                             </div><!-- /.swiper-slide -->
                             <div class="swiper-slide">
                                 <div class="swiper-slide__img">
-                                    <a href="#"><img src="../assets1/images/brand/brand-1-2.png" alt=""></a>
+                                    <a href="#"><img src="/Public/assets1/images/brand/brand-1-2.png" alt=""></a>
                                 </div>
                             </div><!-- /.swiper-slide -->
                             <div class="swiper-slide">
                                 <div class="swiper-slide__img">
-                                    <a href="#"><img src="../assets1/images/brand/brand-1-3.png" alt=""></a>
+                                    <a href="#"><img src="/Public/assets1/images/brand/brand-1-3.png" alt=""></a>
                                 </div>
                             </div><!-- /.swiper-slide -->
                             <div class="swiper-slide">
                                 <div class="swiper-slide__img">
-                                    <a href="#"><img src="../assets1/images/brand/brand-1-4.png" alt=""></a>
+                                    <a href="#"><img src="/Public/assets1/images/brand/brand-1-4.png" alt=""></a>
                                 </div>
                             </div><!-- /.swiper-slide -->
                             <div class="swiper-slide">
                                 <div class="swiper-slide__img">
-                                    <a href="#"><img src="../assets1/images/brand/brand-1-5.png" alt=""></a>
+                                    <a href="#"><img src="/Public/assets1/images/brand/brand-1-5.png" alt=""></a>
                                 </div>
                             </div><!-- /.swiper-slide -->
                             <div class="swiper-slide">
                                 <div class="swiper-slide__img">
-                                    <a href="#"><img src="../assets1/images/brand/brand-1-1.png" alt=""></a>
+                                    <a href="#"><img src="/Public/assets1/images/brand/brand-1-1.png" alt=""></a>
                                 </div>
                             </div><!-- /.swiper-slide -->
                             <div class="swiper-slide">
                                 <div class="swiper-slide__img">
-                                    <a href="#"><img src="../assets1/images/brand/brand-1-2.png" alt=""></a>
+                                    <a href="#"><img src="/Public/assets1/images/brand/brand-1-2.png" alt=""></a>
                                 </div>
                             </div><!-- /.swiper-slide -->
                             <div class="swiper-slide">
                                 <div class="swiper-slide__img">
-                                    <a href="#"><img src="../assets1/images/brand/brand-1-3.png" alt=""></a>
+                                    <a href="#"><img src="/Public/assets1/images/brand/brand-1-3.png" alt=""></a>
                                 </div>
                             </div><!-- /.swiper-slide -->
                             <div class="swiper-slide">
                                 <div class="swiper-slide__img">
-                                    <a href="#"><img src="../assets1/images/brand/brand-1-4.png" alt=""></a>
+                                    <a href="#"><img src="/Public/assets1/images/brand/brand-1-4.png" alt=""></a>
                                 </div>
                             </div><!-- /.swiper-slide -->
                             <div class="swiper-slide">
                                 <div class="swiper-slide__img">
-                                    <a href="#"><img src="../assets1/images/brand/brand-1-5.png" alt=""></a>
+                                    <a href="#"><img src="/Public/assets1/images/brand/brand-1-5.png" alt=""></a>
                                 </div>
                             </div><!-- /.swiper-slide -->
                         </div>
@@ -1176,7 +1176,7 @@
                         <div class="col-xl-4 col-lg-4 col-md-6 wow fadeInLeft" data-wow-delay="100ms">
                             <div class="blog-one__single">
                                 <div class="blog-one__img">
-                                    <img src="../assets1/images/blog/blog-1-1.jpg" alt="">
+                                    <img src="/Public/assets1/images/blog/blog-1-1.jpg" alt="">
                                     <div class="blog-one__hover">
                                         <a href="blog-details.html">
                                             <div class="blog-one__hover-icon-1">
@@ -1209,7 +1209,7 @@
                         <div class="col-xl-4 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="200ms">
                             <div class="blog-one__single">
                                 <div class="blog-one__img">
-                                    <img src="../assets1/images/blog/blog-1-2.jpg" alt="">
+                                    <img src="/Public/assets1/images/blog/blog-1-2.jpg" alt="">
                                     <div class="blog-one__hover">
                                         <a href="blog-details.html">
                                             <div class="blog-one__hover-icon-1">
@@ -1242,7 +1242,7 @@
                         <div class="col-xl-4 col-lg-4 col-md-6 wow fadeInRight" data-wow-delay="300ms">
                             <div class="blog-one__single">
                                 <div class="blog-one__img">
-                                    <img src="../assets1/images/blog/blog-1-3.jpg" alt="">
+                                    <img src="/Public/assets1/images/blog/blog-1-3.jpg" alt="">
                                     <div class="blog-one__hover">
                                         <a href="blog-details.html">
                                             <div class="blog-one__hover-icon-1">

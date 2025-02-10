@@ -55,7 +55,8 @@ class Router
 
     private function abort(int $status = 404) {
         http_response_code($status);
-        require "../App/views/pages/{$status}.php";
+        require_once $_SERVER['DOCUMENT_ROOT']."/App/Views/userFront/{$status}.php";
+
         exit();
     }
 }
