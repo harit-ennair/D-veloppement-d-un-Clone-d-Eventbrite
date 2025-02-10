@@ -1,5 +1,4 @@
-<?php require_once $_SERVER['DOCUMENT_ROOT']."/App/Views/layout/header.php";
-?>
+<?php include_once $_SERVER['DOCUMENT_ROOT']."/App/Views/userFront/layout/header.php"?>
         <!--Main Slider Start-->
         <section class="main-slider">
             <div class="swiper-container thm-swiper__slider" data-swiper-options='{"slidesPerView": 1, "loop": true,
@@ -1292,4 +1291,4 @@
             </div>
         </section>
         
-<?php         require_once $_SERVER['DOCUMENT_ROOT']."/App/Views/layout/footer.php";?>
+<?php include_once $_SERVER['DOCUMENT_ROOT']."/App/Views/userFront/layout/footer.php"?>

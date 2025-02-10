@@ -1,4 +1,4 @@
-<?php include_once $_SERVER['DOCUMENT_ROOT']."/App/Views/layout/header.php"?>
+<?php include_once $_SERVER['DOCUMENT_ROOT']."/App/Views/userFront/layout/header.php"?>
 
 <!--Error Page Start-->
 <section class="error-page">
@@ -26,8 +26,4 @@
         </section>
         <!--Error Page End-->
 
-<<<<<<< HEAD
-        <?php include_once $_SERVER['DOCUMENT_ROOT']."/App/Views/layout/footer.php"?>
-=======
-        <?php include_once '../layout/footer.php'?>
->>>>>>> 961f4516a11ddd555b76e3a04ea4b5c5479cf01b
+        <?php include_once $_SERVER['DOCUMENT_ROOT']."/App/Views/userFront/layout/footer.php"?>

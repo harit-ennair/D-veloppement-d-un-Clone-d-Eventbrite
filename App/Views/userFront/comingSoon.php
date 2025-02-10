@@ -1,4 +1,4 @@
-<?php include_once '../layout/header.php'?>
+<?php include_once $_SERVER['DOCUMENT_ROOT']."/App/Views/userFront/layout/header.php"?>
 
 
     <div class="page-wrapper">
@@ -98,4 +98,4 @@
     </div>
     <!-- /.search-popup -->
 
-    <?php include_once '../layout/footer.php'?>
+    <?php include_once $_SERVER['DOCUMENT_ROOT']."/App/Views/userFront/layout/footer.php"?>
