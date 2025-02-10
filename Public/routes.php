@@ -14,6 +14,8 @@ use App\Controllers\AuthController;
 $router->get("/",Pages::class,"home");
 $router->get("/signUp",AuthController::class,"signUp");
 $router->post("/signUp",AuthController::class,"signUp");
+$router->get("/logIn",AuthController::class,"logIn");
+$router->post("/logIn",AuthController::class,"logIn");
 // $router->post("/signUp",AuthContorller::class,"signUp");
 // $router->post("/signUp",AuthContorller::class,"signUp");
 // $router->get("/config",Database::class,"home");

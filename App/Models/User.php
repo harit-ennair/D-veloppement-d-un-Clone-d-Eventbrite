@@ -15,7 +15,7 @@ class User {
     protected $updated_at;
     protected static $pdo;
 
-    public function __construct($email, $password, $role, $name, $avatar=null) {
+    public function __construct($email, $password, $role=null, $name=null, $avatar=null) {
         $this->email = $email;
         $this->password = $password;
         $this->role = $role;
@@ -40,11 +40,22 @@ class User {
         return $emailExiste;
     }
     public function login() {
-        // if(!$this->emailExiste()){
-        //     throw new \Exception("This email does not exist");
-        // }esle{
-
-        // }
+        if(!$this->emailExiste()){
+            throw new \Exception("This email does not exist");
+        }
+        else{
+            $sql="SELECT id,name,email,role FROM users WHERE email=:email";
+            $stmt=self::$pdo->prepare($sql);
+            $stmt->execute([
+                ":email"=>$this->email
+            ]);
+            $result=$stmt->fetch(\PDO::FETCH_ASSOC);
+            if($result['password']!=$this->password){
+                throw new \Exception("invalid password");
+            }
+            return $result;
+            
+        }
     }
 
     public function logout() {

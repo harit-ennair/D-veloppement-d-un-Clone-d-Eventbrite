@@ -19,7 +19,12 @@ class AuthController {
     }
 
     public function signUp() {
-        
+
+        // if($this->auth->isLoggedIn()){
+        //     header("location: /");
+        //     exit();
+        // }
+
         $name = $email = $role = "";
         $error = [
             "name" => "",
@@ -58,8 +63,8 @@ class AuthController {
                 exit;
             }
             if(strlen($password) < 8){
-                $_SESSION['old'] = ['name'=> $name, 'email' => $email,'role'=>$role];
-                $_SESSION['error']['password'] = "Password is invalid";
+                $this->session->set('old', ['name' => $name, 'email' => $email, 'role' => $role]);
+                $this->session->set('error',['password'=>"invalid password"]);
                 header('Location: /signUp');
 
                 exit;
@@ -92,6 +97,30 @@ class AuthController {
         }
         
     }
+
     require_once $_SERVER['DOCUMENT_ROOT']."/App/Views/register.php";
+}
+
+public function logIn()  {
+    if(isset($_POST['submit'])){
+        
+        $email=htmlspecialchars($_POST['email']);
+        $password=htmlspecialchars($_POST['password']);
+        $password=password_verify($password,PASSWORD_BCRYPT);
+    try{
+        $user=new User($email,$password);
+        $user=$user->login();
+        // $this->auth->login([]);
+        $this->auth->login($user);
+    }
+    catch(\Exception $th){
+        
+        $this->session->set('error', ['email' => $th->getMessage()]);
+        $this->session->set("old",['email' => $email])  ;
+        header('Location: /logIn.php');
+    }
+}
+require_once $_SERVER['DOCUMENT_ROOT']."/App/Views/login.php";
+
 }
 }
