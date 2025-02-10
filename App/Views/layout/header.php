@@ -6,10 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home One || eventflow || eventflow HTML 5 Template </title>
     <!-- favicons Icons -->
+<<<<<<< HEAD
     <link rel="apple-touch-icon" sizes="180x180" href="/Public/assets1/images/favicons/apple-touch-icon.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="/Public/assets1/images/favicons/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/Public/assets1/images/favicons/favicon-16x16.png" />
     <link rel="manifest" href="/Public/assets1/images/favicons/site.webmanifest" />
+=======
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets1/images/favicons/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets1/images/favicons/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets1/images/favicons/favicon-16x16.png" />
+    <link rel="manifest" href="../assets1/images/favicons/site.webmanifest" />
+>>>>>>> 961f4516a11ddd555b76e3a04ea4b5c5479cf01b
     <meta name="description" content="eventflow HTML 5 Template " />
 
     <!-- fonts -->
@@ -22,6 +29,7 @@
 
 
 
+<<<<<<< HEAD
     <link rel="stylesheet" href="/Public/assets1/vendors/bootstrap/css/bootstrap.min.css" />
     <link rel="stylesheet" href="/Public/assets1/vendors/animate/animate.min.css" />
     <link rel="stylesheet" href="/Public/assets1/vendors/animate/custom-animate.css" />
@@ -40,6 +48,26 @@
     <!-- template styles -->
     <link rel="stylesheet" href="/Public/assets1/css/eventflow.css" />
     <link rel="stylesheet" href="/Public/assets1/css/eventflow-responsive.css" />
+=======
+    <link rel="stylesheet" href="../assets1/vendors/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../assets1/vendors/animate/animate.min.css" />
+    <link rel="stylesheet" href="../assets1/vendors/animate/custom-animate.css" />
+    <link rel="stylesheet" href="../assets1/vendors/fontawesome/css/all.min.css" />
+    <link rel="stylesheet" href="../assets1/vendors/jarallax/jarallax.css" />
+    <link rel="stylesheet" href="../assets1/vendors/jquery-magnific-popup/jquery.magnific-popup.css" />
+    <link rel="stylesheet" href="../assets1/vendors/odometer/odometer.min.css" />
+    <link rel="stylesheet" href="../assets1/vendors/swiper/swiper.min.css" />
+    <link rel="stylesheet" href="../assets1/vendors/eventflow-icons/style.css">
+    <link rel="stylesheet" href="../assets1/vendors/owl-carousel/owl.carousel.min.css" />
+    <link rel="stylesheet" href="../assets1/vendors/owl-carousel/owl.theme.default.min.css" />
+    <link rel="stylesheet" href="../assets1/vendors/bootstrap-select/css/bootstrap-select.min.css" />
+    <link rel="stylesheet" href="../assets1/vendors/nice-select/nice-select.css" />
+    <link rel="stylesheet" href="../assets1/vendors/jquery-ui/jquery-ui.css" />
+
+    <!-- template styles -->
+    <link rel="stylesheet" href="../assets1/css/eventflow.css" />
+    <link rel="stylesheet" href="../assets1/css/eventflow-responsive.css" />
+>>>>>>> 961f4516a11ddd555b76e3a04ea4b5c5479cf01b
 </head>
 
 <body class="body-bg-color-1">
@@ -63,7 +91,11 @@
                     <div class="sidebar-info-contents">
                         <div class="content-inner">
                             <div class="logo">
+<<<<<<< HEAD
                                 <a href="index.html"><img src="/Public/assets1/images/resources/logo-1.png" alt="" /></a>
+=======
+                                <a href="index.html"><img src="../assets1/images/resources/logo-1.png" alt="" /></a>
+>>>>>>> 961f4516a11ddd555b76e3a04ea4b5c5479cf01b
                             </div>
                             <div class="content-box">
                                 <h4>About Us</h4>
@@ -72,7 +104,11 @@
                             </div>
                             <div class="form-inner">
                                 <h4>Get a free quote</h4>
+<<<<<<< HEAD
                                 <form action="/Public/assets1/inc/sendemail.php" class="contact-form-validated"
+=======
+                                <form action="../assets1/inc/sendemail.php" class="contact-form-validated"
+>>>>>>> 961f4516a11ddd555b76e3a04ea4b5c5479cf01b
                                     novalidate="novalidate">
                                     <div class="form-group">
                                         <input type="text" name="name" placeholder="Name" required="">
@@ -107,7 +143,11 @@
                     <div class="main-menu__wrapper-inner">
                         <div class="main-menu__left">
                             <div class="main-menu__logo">
+<<<<<<< HEAD
                                 <a href="index.html"><img src="/Public/assets1/images/resources/logo-1.png" alt=""></a>
+=======
+                                <a href="index.html"><img src="../assets1/images/resources/logo-1.png" alt=""></a>
+>>>>>>> 961f4516a11ddd555b76e3a04ea4b5c5479cf01b
                             </div>
                         </div>
                         <div class="main-menu__main-menu-box">
@@ -164,7 +204,11 @@
                                 </div>
                             </div>
                             <div class="main-menu__btn-box">
+<<<<<<< HEAD
                                 <a href="/signUp" class="main-menu__btn thm-btn">JOIN US <span
+=======
+                                <a href="../login.php" class="main-menu__btn thm-btn">JOIN US <span
+>>>>>>> 961f4516a11ddd555b76e3a04ea4b5c5479cf01b
                                         class="icon-arrow-right"></span> </a>
                             </div>
                         </div>
