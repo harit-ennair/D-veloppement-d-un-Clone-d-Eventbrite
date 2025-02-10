@@ -3,7 +3,11 @@ namespace Core;
 require_once $_SERVER['DOCUMENT_ROOT'].'/vendor/autoload.php';
 
 
-use App\Controllers\CarController;
+// use App\Controllers\CarController;
+use App\Controllers\AuthContorller;
+use Core\Auth;
+use Core\Session;
+use Core\ControllerFactory;
 
 
 class Router
@@ -42,10 +46,19 @@ class Router
     }
 
     public function route($uri,$method){
-        foreach($this->routes as $route){
-            if($route['uri']===$uri && $route['method']===strtoupper($method)){
-                $controller = new $route['controller']();
-                return $controller->{$route['action']}();
+        foreach ($this->routes as $route) {
+            if ($route['uri'] === $uri && $route['method'] === strtoupper($method)) {
+                $controllerClass = $route['controller'];
+                $actionMethod = $route['action'];
+
+                // Use the ControllerFactory to create the controller instance
+                $controller = ControllerFactory::createController($controllerClass);
+
+                if (method_exists($controller, $actionMethod)) {
+                    return $controller->$actionMethod();
+                } else {
+                    $this->abort(404);
+                }
             }
         }
         $this->abort(404);

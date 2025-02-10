@@ -11,14 +11,17 @@ class Participant extends User {
         if($this->emailExiste()){
             throw new \Exception("this email dose already Existe");
         }else{
-             $sql="INSERT INTO users(name,email,password,role,avatar) VALUE(:name,:email,:password,:avatar)";
+             $sql="INSERT INTO users (name, email, password, role, avatar) VALUES (:name, :email, :password, :role, :avatar);
+";
              $stmt=self::$pdo->prepare($sql);
              $stmt->execute([
-                "name"=>$this->name,
-                "email"=>$this->email,
-                "password"=>$this->password,
-                "avatar"=>$this->avatar
+                ":name"=>$this->name,
+                ":email"=>$this->email,
+                ":password"=>$this->password,
+                ":role"=>$this->role,
+                ":avatar"=>$this->avatar
              ]);
+             return self::$pdo->lastInsertId();
         }
         
     }

@@ -1,4 +1,6 @@
-<?php include_once 'layoutDashboard/header.php'?>
+<?php include_once 'layoutDashboard/header.php';
+print_r($_SESSION);
+?>
 <!--wrapper-->
 <div class="wrapper">
 		<div class="d-flex align-items-center justify-content-center my-5">
@@ -16,28 +18,35 @@
 										<p class="mb-0">Please fill the below details to create your account</p>
 									</div>
 									<div class="form-body">
-										<form class="row g-3">
+										<form class="row g-3" method="POST">
 											<div class="col-12">
 												<label for="inputUsername" class="form-label">Username</label>
-												<input type="email" class="form-control" id="inputUsername" placeholder="Jhon">
+												<input type="text" class="form-control" name="name" value="<?=$this->session->get("old","name")?>" id="inputUsername" placeholder="Jhon">
+												<h1 style="color:red;font-size: 15px;"><?=$this->session->get("error","name")?></h1>
 											</div>
 											<div class="col-12">
 												<label for="inputEmailAddress" class="form-label">Email Address</label>
-												<input type="email" class="form-control" id="inputEmailAddress" placeholder="example@user.com">
+												<input type="email" class="form-control" name="email" value="<?=$this->session->get("old","email")?>" id="inputEmailAddress" placeholder="example@user.com">
+												<h1 style="color:red;font-size: 15px;"><?=$this->session->get("error","email")?></h1>
+
 											</div>
 											<div class="col-12">
 												<label for="inputChoosePassword" class="form-label">Password</label>
 												<div class="input-group" id="show_hide_password">
-													<input type="password" class="form-control border-end-0" id="inputChoosePassword" value="" placeholder="Enter Password"> <a href="javascript:;" class="input-group-text bg-transparent"><i class='bx bx-hide'></i></a>
+													<input type="password" class="form-control border-end-0" name="password" id="inputChoosePassword" value="" placeholder="Enter Password"> <a href="javascript:;" class="input-group-text bg-transparent"><i class='bx bx-hide'></i></a>
+													
 												</div>
+												<h1 style="color:red;font-size: 15px;"><?=$this->session->get("error","password")?></h1>
 											</div>
 											<div class="col-12">
 												<label for="inputSelectCountry" class="form-label">Country</label>
-												<select class="form-select" id="inputSelectCountry" aria-label="Default select example">
-													<option selected>Choose Your Role</option>
-													<option value="1">organizer</option>
-													<option value="2">participant</option>
+												<select class="form-select" name="role" id="inputSelectCountry" aria-label="Default select example">
+													<option selected value="">Choose Your Role</option>
+			
+													<option value="organizer" <?=$this->session->get('old','role')==='organizer'?'selected':''?>>organizer</option>
+													<option value="participant" <?=$this->session->get('old','role')==='participant'?'selected':''?>>participant</option>
 												</select>
+												<h1 style="color:red;font-size: 15px;"><?=$this->session->get("error","role")?></h1>
 											</div>
 											<div class="col-12">
 												<div class="form-check form-switch">
@@ -47,7 +56,7 @@
 											</div>
 											<div class="col-12">
 												<div class="d-grid">
-													<button type="submit" class="btn btn-light">Sign up</button>
+													<button type="submit" name="submit" class="btn btn-light">Sign up</button>
 												</div>
 											</div>
 											<div class="col-12">
@@ -77,4 +86,7 @@
 		</div>
 	</div>
 	<!--end wrapper-->
-<?php include_once 'layoutDashboard/footer.php'?>
+<?php include_once 'layoutDashboard/footer.php';
+$this->session->remove("error");
+$this->session->remove("old");
+?>
