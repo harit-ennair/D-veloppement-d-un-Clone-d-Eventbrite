@@ -10,6 +10,10 @@ class Pages{
         require_once $_SERVER['DOCUMENT_ROOT']."/App/Views/register.php";
         
     }
+    public function addEvent() {
+        require_once $_SERVER['DOCUMENT_ROOT']."/App/Views/organisatorFront/addEvent.php";
+        
+    }
     
 
 }

@@ -12,7 +12,7 @@ use App\Controllers\Pages;
 
 $router->get("/",Pages::class,"home");
 $router->get("/signUp",Pages::class,"signUp");
-// $router->get("/config",Database::class,"home");
+$router->get("/addEvent",pages::class,"addEvent");
 // $router->post("/",CarController::class,"creatCar");
 // $router->get("/showCars","../App/Controllers/showCars.php","");
 // $router->get("/Admin","../App/Controllers/CarController.php","");
