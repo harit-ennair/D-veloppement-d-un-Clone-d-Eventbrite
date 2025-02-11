@@ -9,10 +9,10 @@ class Auth {
     }
 
     public function login($user) {
-        $this->session->set('user_id', $user['id']);
-        $this->session->set('user_name', $user['name']);
-        $this->session->set('user_email', $user['email']);
-        $this->session->set('user_role', $user['role']);
+        $this->session->set('user', ['id'=>$user['id'],'name'=>$user["name"],'email'=>$user['email'],'role'=>$user['role']]);
+        // $this->session->set('user_name', $user['name']);
+        // $this->session->set('user_email', $user['email']);
+        // $this->session->set('user_role', $user['role']);
     }
 
     public function logout() {
@@ -22,7 +22,7 @@ class Auth {
     }
 
     public function isLoggedIn() {
-        return $this->session->get('user_id') !== null;
+        return $this->session->get('user') !== null;
     }
 
     public function getUserId() {

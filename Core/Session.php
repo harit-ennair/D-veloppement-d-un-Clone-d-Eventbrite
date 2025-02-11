@@ -13,7 +13,11 @@ class Session {
     }
 
     public function get($key,$index=null) {
+        if($index){
         return isset($_SESSION[$key][$index]) ? $_SESSION[$key][$index] : null;
+    }else{
+        return isset($_SESSION[$key]) ? $_SESSION[$key] : null;
+    }
     }
 
     public function remove($key) {

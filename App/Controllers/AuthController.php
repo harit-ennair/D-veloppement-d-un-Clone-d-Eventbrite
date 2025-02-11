@@ -104,7 +104,19 @@ class AuthController {
 public function logIn()  {
 
     if($this->auth->isLoggedIn()){
-            header("location: /");
+        $user= $this->session->get("user");
+        switch($user['role']){
+            case 'organizer':
+                require_once $_SERVER['DOCUMENT_ROOT']."/App/Views/teacher/teacherDashboard.php";
+                return;
+            case 'admin':
+                require_once $_SERVER['DOCUMENT_ROOT']."/App/Views/admin/adminDashboard.php";
+                return;
+            default :
+                header('location:/');    
+        }
+        print_r($user);
+            // header("location: /");
             exit();
         }
 

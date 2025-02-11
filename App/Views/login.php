@@ -2,6 +2,7 @@
 $error=$email="";
 $error=$this->session->get('error','email');
 $email=$this->session->get('old','email');
+
 // echo $email;
 // echo $error;
 // $this->session->remove('error');
