@@ -4,6 +4,7 @@ require_once $_SERVER['DOCUMENT_ROOT'].'/vendor/autoload.php';
 use App\Controllers\Pages;
 use App\Controllers\AuthController;
 use App\Controllers\AdminController;
+use App\Controllers\OrganizerController;
 
 
 // return $routes = [
@@ -25,6 +26,9 @@ $router->get("/eventVerify",AdminController::class,"eventVerify");
 $router->get("/category",AdminController::class,"category");
 $router->get("/userManager",AdminController::class,"userManager");
 $router->get("/eventsManager",AdminController::class,"eventsManager");
+$router->get("/organizerDashboard",OrganizerController::class,"organizerDashboard");
+$router->get("/OrganizerEvents",OrganizerController::class,"OrganizerEvents");
+$router->get("/addEvent",OrganizerController::class,"addEvent");
 
 
 

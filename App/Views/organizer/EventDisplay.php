@@ -1,23 +1,4 @@
 <?php
-include_once $_SERVER['DOCUMENT_ROOT'].'/YouDemy/app/helper/AuthTeacherVerification.php';
-include_once $_SERVER['DOCUMENT_ROOT'].'/YouDemy/app/controllers/teacherAPI.php';
-global $courseEdit;
-global $relatedCourses;
-
-if(isset($courseEdit)&&!empty($courseEdit)){
-// print_r($courseEdit);
-// print_r($relatedCourses);
-$tagEdit=explode(",",$courseEdit['tag']);
-$tagId=explode(",",$courseEdit['tagId']);
-$catId=explode(",",$courseEdit['category_id']);
-
-// print_r($catId);
-// print_r($tagEdit);
-// print_r($tagId);
-} else {
-    header("Location: /YouDemy/app/views/pages/teacher/courses.php");
-    exit();
-}
 include_once $_SERVER['DOCUMENT_ROOT'].'/YouDemy/app/views/pages/teacher/layout/header.php';
 include_once $_SERVER['DOCUMENT_ROOT'].'/YouDemy/app/views/pages/teacher/layout/sideBar.php';
 include_once $_SERVER['DOCUMENT_ROOT'].'/YouDemy/app/views/pages/teacher/layout/TNavBar.php';

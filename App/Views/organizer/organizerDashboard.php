@@ -1,24 +1,7 @@
 <?php
-include_once $_SERVER['DOCUMENT_ROOT'].'/YouDemy/app/Controllers/Statistics.php';
-include_once $_SERVER['DOCUMENT_ROOT']."/YouDemy/app/helper/AuthVerification.php";
-$user=isset($_SESSION['user'])?$_SESSION['user']:[];
-if(isset($user['status'])&&$user['status']==="suspended"){
-    header("location:/YouDemy/app/views/pages/suspendedPage.php");
-}
-if(isset($user['role'])&&$user['role']==="Teacher"){
-    if($user['status']==="verification"){
-    header("location:/YouDemy/app/views/pages/teacher/accountVerification.php");
-    }
-}else{
-    header("location:/YouDemy/public/index.php");
-}
-include_once $_SERVER['DOCUMENT_ROOT'].'/YouDemy/app/views/pages/teacher/layout/header.php';
-include_once $_SERVER['DOCUMENT_ROOT'].'/YouDemy/app/views/pages/teacher/layout/sideBar.php';
-include_once $_SERVER['DOCUMENT_ROOT'].'/YouDemy/app/views/pages/teacher/layout/TNavBar.php';
-$user=isset($_SESSION['user'])?$_SESSION['user']:[];
-// print_r($user);
-global $teacherStudents;
-global $courseCount;
+include_once $_SERVER['DOCUMENT_ROOT'].'/app/views/organizer/layout/header.php';
+include_once $_SERVER['DOCUMENT_ROOT'].'/app/views/organizer/layout/sideBar.php';
+include_once $_SERVER['DOCUMENT_ROOT'].'/app/views/organizer/layout/TNavBar.php';
 ?>
 <main class="overflow-x-scroll scrollbar-hide flex flex-col justify-between pt-[42px] px-[23px] pb-[28px]">
         <div>
@@ -43,7 +26,7 @@ global $courseCount;
               </div>
               <div class="border bg-neutral-bg border-neutral dark:bg-dark-neutral-bg dark:border-dark-neutral-border rounded-2xl pb-[19px] xl:w-1/3"> 
                 <div class="flex items-center justify-between border-b border-neutral dark:border-dark-neutral-border mb-[21px] pb-[16px] px-6 pt-[19px]">
-                  <div class="text-base leading-5 text-gray-1100 font-semibold dark:text-gray-dark-1100">Student Count:<?=isset($teacherStudents)?$teacherStudents:""?> </div>
+                  <div class="text-base leading-5 text-gray-1100 font-semibold dark:text-gray-dark-1100">Student Count:<?=isset($organizerStudents)?$organizerStudents:""?> </div>
                   <div class="text-base leading-5 text-gray-1100 font-semibold dark:text-gray-dark-1100">course Count: <?=isset($courseCount)?$courseCount:""?></div>
                   
                 </div>
@@ -75,7 +58,7 @@ global $courseCount;
     const SdataValues = [];  // Array to store data values
 
     async function getTauxEngagements() {
-      await fetch('/YouDemy/app/Controllers/statistics.php?tauxEngagements=true')
+      await fetch('/app/Controllers/statistics.php?tauxEngagements=true')
       .then(response => response.json())
       .then(data => {
         console.log(data);
@@ -140,5 +123,5 @@ global $courseCount;
 </script>
     
     <?php
-include_once $_SERVER['DOCUMENT_ROOT'].'/YouDemy/app/views/pages/teacher/layout/footer.php';
+include_once $_SERVER['DOCUMENT_ROOT'].'/app/views/organizer/layout/footer.php';
 ?>
