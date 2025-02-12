@@ -19,6 +19,12 @@ class ControllerFactory
             //     return new $controllerName($dependency1, $dependency2);
             default:
                 return new $controllerName();
+
+                case 'App\Controllers\C_password':
+                    return new $controllerName($db, $session, $_REQUEST);  
+                default:
+                    return new $controllerName();
         }
+
     }
 }
