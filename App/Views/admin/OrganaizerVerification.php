@@ -2,7 +2,7 @@
 include_once $_SERVER['DOCUMENT_ROOT'].'/App/Views/admin/layout/header.php';
 include_once $_SERVER['DOCUMENT_ROOT'].'/App/Views/admin/layout/sideBar.php';
 include_once $_SERVER['DOCUMENT_ROOT'].'/App/Views/admin/layout/TNavBar.php';
-
+// print_r($organizers) ;
 
 
 ?>
@@ -171,7 +171,27 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/App/Views/admin/layout/TNavBar.php';
                 </tr>
               </thead>
               <tbody id="tbody">
-                                
+
+
+
+
+              <?php foreach ($organizers as $customer): ?>
+                <tr class="border-b border-neutral dark:border-dark-neutral-border pb-[15px]">
+                    <td class="font-normal text-normal text-gray-400 text-left pb-[15px] dark:text-gray-dark-400"><?= $customer['name']; ?></td>
+                    <td class="font-normal text-normal text-gray-400 text-left pb-[15px] dark:text-gray-dark-400"><?= $customer['email']; ?></td>
+                    <td class="font-normal text-normal text-gray-400 text-left pb-[15px] dark:text-gray-dark-400"><?= $customer['role']; ?></td>
+                    <td class="font-normal text-normal text-gray-400 text-left pb-[15px] dark:text-gray-dark-400"><?= $customer['status']; ?></td>
+                    <td class="font-normal text-normal text-gray-400 text-left pb-[15px] dark:text-gray-dark-400"><?= $customer['created_at']; ?></td>
+                    <td class="font-normal text-normal text-gray-400 text-center pb-[15px] dark:text-gray-dark-400">
+                        <button class="text-blue-500 hover:text-blue-700">active</button>
+                        <button class="text-red-500 hover:text-red-700">banned</button>  
+                    </td>
+                </tr>
+            <?php endforeach; ?>
+
+
+
+            
               </tbody>
             </table>
           </div>

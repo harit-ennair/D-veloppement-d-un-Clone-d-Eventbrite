@@ -10,6 +10,7 @@ class ControllerFactory
     {
         $session = new Session();
         $auth = new Auth($session);
+        
 
         switch ($controllerName) {
             case 'App\Controllers\AuthController':

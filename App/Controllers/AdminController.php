@@ -8,6 +8,8 @@ use Core\Auth;
 use Core\Session;
 use App\Models\Organizer;
 use App\Models\Participant;
+use App\Repository\UserManager;
+
 
 class AdminController{
     public function adminDashboard(){
@@ -16,6 +18,8 @@ class AdminController{
         
     }
     public function verifyOrganizer(){
+
+        $organizers =  UserManager::getOrganizers();
         
         require_once $_SERVER['DOCUMENT_ROOT']."/App/Views/admin/OrganaizerVerification.php";
     }
