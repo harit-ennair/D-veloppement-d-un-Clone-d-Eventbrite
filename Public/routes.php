@@ -36,6 +36,8 @@ $router->post("/resetPassword", C_password::class, "resetPassword");
 
 
 
+
+
 // $router->post("/signUp",AuthContorller::class,"signUp");
 // $router->post("/signUp",AuthContorller::class,"signUp");
 // $router->get("/config",Database::class,"home");
