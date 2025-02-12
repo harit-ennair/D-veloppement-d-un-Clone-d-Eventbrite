@@ -5,7 +5,7 @@ $user=isset($_SESSION['user'])?$_SESSION['user']:[];
 <div class="wrapper mx-auto text-gray-900 font-normal grid scrollbar-hide grid-cols-[257px,1fr] grid-rows-[auto,1fr]" id="layout">
 <aside class="bg-white row-span-2 border-r border-neutral relative flex flex-col justify-between p-[25px] dark:bg-dark-neutral-bg dark:border-dark-neutral-border"> 
         <div class="absolute p-2 border-neutral right-0 border bg-white rounded-full cursor-pointer duration-300 translate-x-1/2 hover:opacity-75 dark:bg-dark-neutral-bg dark:border-dark-neutral-border" id="sidebar-btn"><img src="/public/assets/images/icons/icon-arrow-left.svg" alt="left chevron icon"></div>
-        <div><a class="mb-10" href="/public/index.php"> <img class="logo-maximize" src="/Public/assets1/images/resources/logo-1.png" alt="Frox logo"><img class="logo-minimize ml-[10px]" src="/Public/assets1/images/resources/logo-1.png" alt="Frox logo"></a>
+        <div><a class="mb-10" href="/"> <img class="logo-maximize" src="/Public/assets1/images/resources/logo-1.png" alt="Frox logo"><img class="logo-minimize ml-[10px]" src="/Public/assets1/images/resources/logo-1.png" alt="Frox logo"></a>
           <div class="pt-[106px] lg:pt-[35px] pb-[18px]">
             
             <div class="sidemenu-item rounded-xl relative">
