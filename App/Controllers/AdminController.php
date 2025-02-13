@@ -21,8 +21,6 @@ class AdminController{
 
         $organizers =  UserManager::getOrganizers();
 
-
-
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             $id = $_POST['id'] ?? null; 
