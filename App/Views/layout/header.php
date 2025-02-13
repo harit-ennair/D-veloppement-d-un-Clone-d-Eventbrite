@@ -19,6 +19,9 @@
         href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
         rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <?php 
+    // session_start();
+    ?>
 
 
 
@@ -44,13 +47,13 @@
 
 <body class="body-bg-color-1">
 
-
-
+    
     <div class="preloader">
         <div class="preloader__image"></div>
     </div>
     <!-- /.preloader -->
-
+    
+    
     <!-- Start sidebar widget content -->
     <div class="xs-sidebar-group info-group info-sidebar">
         <div class="xs-overlay xs-bg-black"></div>
@@ -83,9 +86,11 @@
                                     <div class="form-group">
                                         <textarea name="message" placeholder="Message..."></textarea>
                                     </div>
+                                    
                                     <div class="form-group message-btn">
                                         <button type="submit" class="thm-btn form-inner__btn">Submit Now</button>
                                     </div>
+
                                 </form>
                                 <div class="result"></div>
                             </div>
@@ -163,10 +168,23 @@
                                     </a>
                                 </div>
                             </div>
+                            
+                            <?php if($_SESSION['user']['role'] == 'organizer'){ ?>
                             <div class="main-menu__btn-box">
-                                <a href="/logIn" class="main-menu__btn thm-btn">JOIN US <span
+                                <a href="/organizerDashboard" class="main-menu__btn thm-btn">Dashboard<span
                                         class="icon-arrow-right"></span> </a>
                             </div>
+                            <?php }else if($_SESSION['user']['role'] == 'participant'){?>
+                            <div class="main-menu__btn-box">
+                                <a href="/event" class="main-menu__btn thm-btn">join us <span
+                                        class="icon-arrow-right"></span> </a>
+                            </div>
+                            <?php }else{?>
+                                <div class="main-menu__btn-box">
+                                <a href="/logIn" class="main-menu__btn thm-btn">join us <span
+                                        class="icon-arrow-right"></span> </a>
+                            </div>
+                              <?php }?>
                         </div>
                     </div>
                 </div>

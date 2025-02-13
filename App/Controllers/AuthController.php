@@ -115,7 +115,7 @@ public function logIn()  {
             default :
                 header('location:/');    
         }
-        print_r($user);
+        // print_r($user);
             // header("location: /");
             exit();
         }
