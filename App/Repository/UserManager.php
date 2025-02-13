@@ -6,7 +6,5 @@ use Config\Database;
 class UserManager{
     private static $pdo=Database::getConnection();
 
-    public static function SignUp(){
-        $sql="";
-    }
+    
 }
