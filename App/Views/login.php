@@ -44,7 +44,7 @@ $email=$this->session->get('old','email');
 													<label class="form-check-label" for="flexSwitchCheckChecked">Remember Me</label>
 												</div>
 											</div>
-											<div class="col-md-6 text-end">	<a href="forgetPassword.php">Forgot Password ?</a>
+											<div class="col-md-6 text-end">	<a href="/forgotPassword">Forgot Password ?</a>
 											</div>
 											<div class="col-12">
 												<div class="d-grid">
@@ -53,7 +53,7 @@ $email=$this->session->get('old','email');
 											</div>
 											<div class="col-12">
 												<div class="text-center ">
-													<p class="mb-0">Don't have an account yet? <a href="register.php">Sign up here</a>
+													<p class="mb-0">Don't have an account yet? <a href="/signUp">Sign up here</a>
 													</p>
 												</div>
 											</div>
