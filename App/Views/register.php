@@ -46,7 +46,7 @@ print_r($_SESSION);
 													<option value="organizer" <?=$this->session->get('old','role')==='organizer'?'selected':''?>>organizer</option>
 													<option value="participant" <?=$this->session->get('old','role')==='participant'?'selected':''?>>participant</option>
 												</select>
-												<h1 style="color:red;font-size: 15px;"><?=$this->session->get("error","role")?></h1>
+												<h1 style="color:red;font-size: 15px;"><?= $this->session->get("error","role")?></h1>
 											</div>
 											<div class="col-12">
 												<div class="form-check form-switch">
@@ -61,7 +61,7 @@ print_r($_SESSION);
 											</div>
 											<div class="col-12">
 												<div class="text-center ">
-													<p class="mb-0">Already have an account? <a href="login.php">Sign in here</a></p>
+													<p class="mb-0">Already have an account? <a href="/logIn">Sign in here</a></p>
 												</div>
 											</div>
 										</form>
