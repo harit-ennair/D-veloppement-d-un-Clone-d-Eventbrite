@@ -9,9 +9,10 @@ class UserManager {
 
     public static function getOrganizers() {
         self::$pdo = Database::getConnection();
-        $stmt = self::$pdo->prepare('SELECT * FROM users WHERE role = :organizer');
+        $stmt = self::$pdo->prepare('SELECT * FROM users WHERE role = :organizer and status = :inactive');
         $stmt->execute([
-            ":organizer"=>"organizer"
+            ":organizer"=>"organizer",
+            ":inactive"=>"inactive"
         ]);
         return $stmt->fetchAll();
     }
