@@ -25,13 +25,21 @@ include_once $_SERVER['DOCUMENT_ROOT'] . '/App/Views/admin/layout/TNavBar.php';
       </div>
     </div>
     <div class="flex items-center justify-between flex-wrap gap-5 mb-[27px]">
+
+
+
       <div class="dropdown dropdown-end">
         <label class="cursor-pointer dropdown-label flex items-center justify-between" tabindex="0">
           <div
+
+          
             class="flex items-center justify-between p-4 bg-neutral-bg border border-neutral rounded-lg w-[225px] dark:bg-dark-neutral-bg dark:border-dark-neutral-border">
             <p class="text-sm leading-4 text-gray-500 dark:text-gray-dark-500">All Category</p><img
               class="cursor-pointer" src="/public/assets/images/icons/icon-arrow-down.svg" alt="arrow icon">
+
+              
           </div>
+ 
         </label>
         <ul class="dropdown-content" tabindex="0">
           <div
