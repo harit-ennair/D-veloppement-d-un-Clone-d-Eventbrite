@@ -1,45 +1,86 @@
 <?php
+// Category.php
 namespace App\Models;
+
 class Category {
-    private $id;
-    private $name;
+    private $db;
 
-    public function __construct($id, $name) {
-        $this->id = $id;
-        $this->name = $name;
+    public function __construct($db) {
+        $this->db = $db::getConnection();
     }
 
-    public function addCategory() {
-        // Add category logic
+    public function addCategory($name) {
+        try {
+            $query = "INSERT INTO categories (name) VALUES (:name)";
+            $stmt = $this->db->prepare($query);
+            $result = $stmt->execute(['name' => $name]);
+            
+            if ($result) {
+                return [
+                    'success' => true,
+                    'id' => $this->db->lastInsertId(),
+                    'message' => 'Category added successfully'
+                ];
+            }
+            return [
+                'success' => false,
+                'message' => 'Failed to add category'
+            ];
+        } catch (\PDOException $e) {
+            return [
+                'success' => false,
+                'message' => "Error: " . $e->getMessage()
+            ];
+        }
     }
 
-    public function updateCategory() {
-        // Update category logic
+    public function updateCategory($id, $name) {
+        try {
+            $query = "UPDATE categories SET name = :name WHERE id = :id";
+            $stmt = $this->db->prepare($query);
+            $result = $stmt->execute([
+                'name' => $name,
+                'id' => $id
+            ]);
+            
+            return [
+                'success' => $result,
+                'message' => $result ? 'Category updated successfully' : 'No changes made'
+            ];
+        } catch (\PDOException $e) {
+            return [
+                'success' => false,
+                'message' => 'Database error occurred'
+            ];
+        }
     }
 
-    public function deleteCategory() {
-        // Delete category logic
+    public function deleteCategory($id) {
+        try {
+            $query = "DELETE FROM categories WHERE id = :id";
+            $stmt = $this->db->prepare($query);
+            $result = $stmt->execute(['id' => $id]);
+            
+            return [
+                'success' => $result,
+                'message' => $result ? 'Category deleted successfully' : 'Category not found'
+            ];
+        } catch (\PDOException $e) {
+            return [
+                'success' => false,
+                'message' => 'Database error occurred'
+            ];
+        }
     }
 
-    public function getCategoryDetails() {
-        // Get category details logic
-    }
-
-    // Getters and setters
-    public function getId() {
-        return $this->id;
-    }
-
-    public function setId($id) {
-        $this->id = $id;
-    }
-
-    public function getName() {
-        return $this->name;
-    }
-
-    public function setName($name) {
-        $this->name = $name;
+    public function getAllCategories() {
+        try {
+            $query = "SELECT * FROM categories ORDER BY name";
+            $stmt = $this->db->prepare($query);
+            $stmt->execute();
+            return $stmt->fetchAll(\PDO::FETCH_ASSOC);
+        } catch (\PDOException $e) {
+            return [];
+        }
     }
 }
-?>
