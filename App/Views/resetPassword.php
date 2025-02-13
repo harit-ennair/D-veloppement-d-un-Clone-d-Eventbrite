@@ -1,6 +1,6 @@
 <?php include_once 'layoutDashboard/header.php'?>
-	<!-- wrapper -->
-	<div class="wrapper">
+<!-- wrapper -->
+<div class="wrapper">
     <div class="authentication-reset-password d-flex align-items-center justify-content-center">
         <div class="container">
             <div class="row row-cols-1 row-cols-lg-2 row-cols-xl-3">
@@ -16,21 +16,39 @@
                                     <p class="mb-0">Please enter your new password!</p>
                                 </div>
                                 
-                                <!-- Add success/error message display -->
-                                <div id="messageBox" style="display: none;" class="alert"></div>
+                                <?php
+                                // Display error/success messages
+                                if (isset($_SESSION['error'])) {
+                                    echo '<div class="alert alert-danger">' . $_SESSION['error'] . '</div>';
+                                    unset($_SESSION['error']);
+                                }
+                                if (isset($_SESSION['success'])) {
+                                    echo '<div class="alert alert-success">' . $_SESSION['success'] . '</div>';
+                                    unset($_SESSION['success']);
+                                }
+                                ?>
                                 
-                                <form id="resetPasswordForm" method="POST" action="resetPassword.php" >
+                                <form method="POST" action="/resetPassword">
                                     <input type="hidden" name="email" value="<?php echo htmlspecialchars($_GET['email'] ?? ''); ?>">
                                     <input type="hidden" name="token" value="<?php echo htmlspecialchars($_GET['token'] ?? ''); ?>">
-                                    <input type="hidden" name="csrf_token" value="<?php echo htmlspecialchars($_SESSION['csrf_token'] ?? ''); ?>">
                                     
                                     <div class="mb-3 mt-4">
                                         <label class="form-label">New Password</label>
-                                        <input type="password" name="password" class="form-control" placeholder="Enter new password" required minlength="8" />
+                                        <input type="password" 
+                                               name="password" 
+                                               class="form-control" 
+                                               placeholder="Enter new password" 
+                                               required 
+                                               minlength="8" />
                                     </div>
                                     <div class="mb-4">
                                         <label class="form-label">Confirm Password</label>
-                                        <input type="password" name="confirm_password" class="form-control" placeholder="Confirm password" required minlength="8" />
+                                        <input type="password" 
+                                               name="confirm_password" 
+                                               class="form-control" 
+                                               placeholder="Confirm password" 
+                                               required 
+                                               minlength="8" />
                                     </div>
                                     <div class="d-grid gap-2">
                                         <button type="submit" class="btn btn-primary">Change Password</button>
@@ -45,6 +63,4 @@
         </div>
     </div>
 </div>
-
-	<!-- end wrapper -->
 <?php include_once 'layoutDashboard/footer.php'?>

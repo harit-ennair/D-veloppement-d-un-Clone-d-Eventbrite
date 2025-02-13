@@ -3,6 +3,7 @@ namespace Core;
 
 use Core\Auth;
 use Core\Session;
+use Config\Database;
 
 class ControllerFactory
 {
@@ -10,7 +11,7 @@ class ControllerFactory
     {
         $session = new Session();
         $auth = new Auth($session);
-        
+        $db = Database::getConnection();
 
         switch ($controllerName) {
             case 'App\Controllers\AuthController':
@@ -20,11 +21,12 @@ class ControllerFactory
             // case 'App\Controllers\AnotherController':
             //     return new $controllerName($dependency1, $dependency2);
 
-            case 'App\Controllers\C_password':
-                return new $controllerName($db, $session, $_REQUEST);  
+            case 'C_password':
+                $controllerName = 'App\\Controllers\\C_password';
+                return new $controllerName($db, $session);
 
             default:
                 return new $controllerName();
-        }
     }
+}
 }

@@ -20,7 +20,6 @@ class C_password {
         $this->forgetPassword = new ForgetPassword($db);
     }
 
-    // Rest of your methods remain exactly the same
     public function showForgotForm() {
         require_once $_SERVER['DOCUMENT_ROOT']."/App/Views/forgetPassword.php";
     }
@@ -44,7 +43,6 @@ class C_password {
                     $this->mailer->sendResetEmail($email, $token);
                 }
 
-                // Always show success message for security
                 echo json_encode([
                     'success' => true,
                     'message' => 'If your email exists in our system, you will receive a password reset link.'
@@ -77,6 +75,8 @@ class C_password {
             $token = filter_input(INPUT_POST, 'token', FILTER_SANITIZE_STRING);
             $password = $_POST['password'] ?? '';
             $confirmPassword = $_POST['confirm_password'] ?? '';
+    //         var_dump($_POST);
+    // exit;
 
             if (!$email || !$token) {
                 echo json_encode([
@@ -87,17 +87,14 @@ class C_password {
             }
 
             try {
-                // Validate password strength
                 if (strlen($password) < 8) {
                     throw new \Exception('Password must be at least 8 characters long');
                 }
 
-                // Validate passwords match
                 if ($password !== $confirmPassword) {
                     throw new \Exception('Passwords do not match');
                 }
 
-                // Verify token and update password
                 $tokenData = $this->forgetPassword->verifyToken($email, $token);
                 if (!$tokenData) {
                     throw new \Exception('Invalid or expired reset token');
@@ -126,7 +123,7 @@ class C_password {
 
         try {
             $query = "SELECT * FROM users WHERE email = :email";
-            $stmt = $this->db::getConnection()->prepare($query);
+            $stmt = $this->db->prepare($query);
             $stmt->execute(['email' => $email]);
             return $stmt->fetch();
         } catch (\PDOException $e) {
