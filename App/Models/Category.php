@@ -1,22 +1,19 @@
 <?php
+// Category.php
 namespace App\Models;
 
 class Category {
-    private $id;
-    private $name;
     private $db;
 
-    public function __construct($id, $name, $db) {
-        $this->id = $id;
-        $this->name = $name;
+    public function __construct($db) {
         $this->db = $db::getConnection();
     }
 
-    public function addCategory() {
+    public function addCategory($name) {
         try {
             $query = "INSERT INTO categories (name) VALUES (:name)";
             $stmt = $this->db->prepare($query);
-            $result = $stmt->execute(['name' => $this->name]);
+            $result = $stmt->execute(['name' => $name]);
             
             if ($result) {
                 return [
@@ -29,19 +26,21 @@ class Category {
                 'success' => false,
                 'message' => 'Failed to add category'
             ];
-        } catch (Exception $e) {
-            echo json_encode(["success" => false, "message" => "Error: " . $e->getMessage()]);
+        } catch (\PDOException $e) {
+            return [
+                'success' => false,
+                'message' => "Error: " . $e->getMessage()
+            ];
         }
-        
     }
 
-    public function updateCategory() {
+    public function updateCategory($id, $name) {
         try {
             $query = "UPDATE categories SET name = :name WHERE id = :id";
             $stmt = $this->db->prepare($query);
             $result = $stmt->execute([
-                'name' => $this->name,
-                'id' => $this->id
+                'name' => $name,
+                'id' => $id
             ]);
             
             return [
@@ -56,11 +55,11 @@ class Category {
         }
     }
 
-    public function deleteCategory() {
+    public function deleteCategory($id) {
         try {
             $query = "DELETE FROM categories WHERE id = :id";
             $stmt = $this->db->prepare($query);
-            $result = $stmt->execute(['id' => $this->id]);
+            $result = $stmt->execute(['id' => $id]);
             
             return [
                 'success' => $result,
@@ -74,34 +73,14 @@ class Category {
         }
     }
 
-    public static function getAllCategories($db) {
+    public function getAllCategories() {
         try {
-            $conn = $db::getConnection();
             $query = "SELECT * FROM categories ORDER BY name";
-            $stmt = $conn->prepare($query);
+            $stmt = $this->db->prepare($query);
             $stmt->execute();
             return $stmt->fetchAll(\PDO::FETCH_ASSOC);
         } catch (\PDOException $e) {
             return [];
         }
     }
-
-
-    // Getters and setters
-    public function getId() {
-        return $this->id;
-    }
-
-    public function setId($id) {
-        $this->id = $id;
-    }
-
-    public function getName() {
-        return $this->name;
-    }
-
-    public function setName($name) {
-        $this->name = $name;
-    }
 }
-?>

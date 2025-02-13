@@ -2,7 +2,6 @@
 
 include_once $_SERVER['DOCUMENT_ROOT'].'/app/views/admin/layout/header.php';
 include_once $_SERVER['DOCUMENT_ROOT'].'/app/views/admin/layout/sideBar.php';
-
 include_once $_SERVER['DOCUMENT_ROOT'].'/app/views/admin/layout/TNavBar.php';
 ?>
 
