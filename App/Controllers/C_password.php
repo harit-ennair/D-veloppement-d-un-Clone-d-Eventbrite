@@ -44,7 +44,6 @@ class C_password {
                     $this->mailer->sendResetEmail($email, $token);
                 }
 
-                // Always show success message for security
                 echo json_encode([
                     'success' => true,
                     'message' => 'If your email exists in our system, you will receive a password reset link.'
@@ -87,12 +86,10 @@ class C_password {
             }
 
             try {
-                // Validate password strength
                 if (strlen($password) < 8) {
                     throw new \Exception('Password must be at least 8 characters long');
                 }
 
-                // Validate passwords match
                 if ($password !== $confirmPassword) {
                     throw new \Exception('Passwords do not match');
                 }
