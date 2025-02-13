@@ -103,14 +103,17 @@ document.addEventListener("DOMContentLoaded", function () {
                 nameCell.textContent = category.name;
 
                 const actionCell = document.createElement("td");
+                actionCell.className = "space-x-2"; // ⬅️ إضافة تباعد بين الأزرار
 
                 const editButton = document.createElement("button");
                 editButton.textContent = "Edit";
                 editButton.onclick = () => updateCategory(category.id, category.name);
+                editButton.className = "bg-blue-500 text-white px-3 py-1 rounded-lg hover:bg-blue-700 transition duration-300 shadow-md cursor-pointer";
 
                 const deleteButton = document.createElement("button");
                 deleteButton.textContent = "Delete";
                 deleteButton.onclick = () => deleteCategory(category.id);
+                deleteButton.className = "bg-red-500 text-white px-3 py-1 rounded-lg hover:bg-red-700 transition duration-300 shadow-md cursor-pointer";
 
                 actionCell.appendChild(editButton);
                 actionCell.appendChild(deleteButton);
@@ -127,14 +130,19 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function showAlert(type, message) {
         const alertDiv = document.createElement("div");
-        alertDiv.className = `fixed top-4 right-4 p-4 rounded-lg ${
+        alertDiv.className = `fixed top-4 right-4 p-4 rounded-lg text-white opacity-0 transition-opacity duration-500 ${
             type === "success" ? "bg-green-500" : "bg-red-500"
-        } text-white`;
+        }`;
         alertDiv.textContent = message;
         document.body.appendChild(alertDiv);
 
         setTimeout(() => {
-            alertDiv.remove();
+            alertDiv.classList.add("opacity-100"); 
+        }, 50);
+
+        setTimeout(() => {
+            alertDiv.classList.remove("opacity-100");
+            setTimeout(() => alertDiv.remove(), 500);
         }, 3000);
     }
 

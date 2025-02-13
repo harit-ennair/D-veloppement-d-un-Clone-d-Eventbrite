@@ -20,7 +20,6 @@ class C_password {
         $this->forgetPassword = new ForgetPassword($db);
     }
 
-    // Rest of your methods remain exactly the same
     public function showForgotForm() {
         require_once $_SERVER['DOCUMENT_ROOT']."/App/Views/forgetPassword.php";
     }
@@ -76,6 +75,8 @@ class C_password {
             $token = filter_input(INPUT_POST, 'token', FILTER_SANITIZE_STRING);
             $password = $_POST['password'] ?? '';
             $confirmPassword = $_POST['confirm_password'] ?? '';
+    //         var_dump($_POST);
+    // exit;
 
             if (!$email || !$token) {
                 echo json_encode([
@@ -94,7 +95,6 @@ class C_password {
                     throw new \Exception('Passwords do not match');
                 }
 
-                // Verify token and update password
                 $tokenData = $this->forgetPassword->verifyToken($email, $token);
                 if (!$tokenData) {
                     throw new \Exception('Invalid or expired reset token');
@@ -123,7 +123,7 @@ class C_password {
 
         try {
             $query = "SELECT * FROM users WHERE email = :email";
-            $stmt = $this->db::getConnection()->prepare($query);
+            $stmt = $this->db->prepare($query);
             $stmt->execute(['email' => $email]);
             return $stmt->fetch();
         } catch (\PDOException $e) {

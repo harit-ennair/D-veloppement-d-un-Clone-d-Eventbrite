@@ -14,7 +14,7 @@
                     <!-- Add success/error message display -->
                     <div id="messageBox" style="display: none;" class="alert"></div>
                     
-                    <form id="forgotPasswordForm" method="POST"  >
+                    <form id="showForgotForm" method="POST"  >
                         <div class="my-4">
                             <label class="form-label">Email</label>
                             <input type="email" name="email" class="form-control" placeholder="example@user.com" required />
