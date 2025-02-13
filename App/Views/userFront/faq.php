@@ -1,4 +1,4 @@
-<?php include_once '../layout/header.php'?>
+<?php include_once $_SERVER['DOCUMENT_ROOT']."/App/Views/layout/header.php"?>
 
 <!--Faq Page Start-->
 <section class="faq-page">
@@ -140,4 +140,4 @@
             </div>
         </section>
         <!--Faq Page End-->
-<?php include_once '../layout/footer.php'?>
+        <?php include_once $_SERVER['DOCUMENT_ROOT']."/App/Views/layout/footer.php"?>
