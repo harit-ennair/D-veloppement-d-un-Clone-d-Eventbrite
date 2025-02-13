@@ -107,7 +107,7 @@ public function logIn()  {
         $user= $this->session->get("user");
         switch($user['role']){
             case 'organizer':
-                require_once $_SERVER['DOCUMENT_ROOT']."/App/Views/teacher/teacherDashboard.php";
+                require_once $_SERVER['DOCUMENT_ROOT']."/App/Views/teacher/organizerDashboard.php";
                 return;
             case 'admin':
                 require_once $_SERVER['DOCUMENT_ROOT']."/App/Views/admin/adminDashboard.php";

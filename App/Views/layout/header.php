@@ -164,7 +164,7 @@
                                 </div>
                             </div>
                             <div class="main-menu__btn-box">
-                                <a href="../login.php" class="main-menu__btn thm-btn">JOIN US <span
+                                <a href="/logIn" class="main-menu__btn thm-btn">JOIN US <span
                                         class="icon-arrow-right"></span> </a>
                             </div>
                         </div>
