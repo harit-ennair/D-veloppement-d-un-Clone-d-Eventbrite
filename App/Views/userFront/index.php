@@ -67,7 +67,7 @@
                                             </li>
                                         </ul>
                                         <div class="main-slider__btn-box">
-                                            <a href="contact.html" class="main-slider__btn thm-btn">Purchase Ticket
+                                            <a href="/event" class="main-slider__btn thm-btn">Purchase Ticket
                                                 <span class="icon-arrow-right"></span> </a>
                                         </div>
                                     </div>

@@ -1,21 +1,21 @@
-<?php include_once '../layout/header.php'?>
+<?php include_once $_SERVER['DOCUMENT_ROOT']."/App/Views/layout/header.php"?>
 
         <!--Page Header Start-->
         <section class="page-header">
             <div class="page-header__bg" style="background-image: url(../assets1/images/backgrounds/page-header-bg.jpg);">
             </div>
             <div class="page-header__shape-1 float-bob-y">
-                <img src="../assets1/images/shapes/page-header-shape-1.png" alt="">
+                <img src="/Public/assets1/images/shapes/page-header-shape-1.png" alt="">
             </div>
             <div class="page-header__shape-2 float-bob-x">
-                <img src="../assets1/images/shapes/page-header-shape-2.png" alt="">
+                <img src="/Public/assets1/images/shapes/page-header-shape-2.png" alt="">
             </div>
             <div class="container">
                 <div class="page-header__inner">
                     <h2>Contact</h2>
                     <div class="thm-breadcrumb__box">
                         <ul class="thm-breadcrumb list-unstyled">
-                            <li><a href="index.html">Home</a></li>
+                            <li><a href="/">Home</a></li>
                             <li><span class="icon-angle-right"></span></li>
                             <li>Contact US</li>
                         </ul>
@@ -130,4 +130,4 @@
 
     
 
-        <?php include_once '../layout/footer.php'?>
+        <?php include_once $_SERVER['DOCUMENT_ROOT']."/App/Views/layout/footer.php"?>

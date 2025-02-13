@@ -114,7 +114,7 @@
                             <!-- <a href="#" class="mobile-nav__toggler"><i class="fa fa-bars"></i></a> -->
                             <ul class="main-menu__list">
                                 <li class="dropdown">
-                                    <a href="index.php">Home</a>
+                                    <a href="/">Home</a>
                                 </li>
                                 <li class="dropdown">
                                     <a href="#">Services</a>
@@ -129,7 +129,7 @@
                                 </li>
                                 
                                 <li class="dropdown">
-                                    <a href="event.php">Event</a>
+                                    <a href="/event">Event</a>
                                 </li>
                                 <li class="dropdown">
                                     <a href="#">Blog</a>
@@ -142,13 +142,13 @@
                                 <li class="dropdown">
                                     <a href="#">About us</a>
                                     <ul>
-                                        <li><a href="team.php">Team</a></li>
-                                        <li><a href="faq.php">FAQ</a></li>
-                                        <li><a href="comingSoon.php">Comming soon</a></li>
+                                        <li><a href="/team">Team</a></li>
+                                        <li><a href="/faq">FAQ</a></li>
+                                        <li><a href="/comingSoon">Comming soon</a></li>
                                     </ul>
                                 </li>
                                 <li>
-                                    <a href="contact.php">Contact</a>
+                                    <a href="/contact">Contact</a>
                                 </li>
                             </ul>
                         </div>

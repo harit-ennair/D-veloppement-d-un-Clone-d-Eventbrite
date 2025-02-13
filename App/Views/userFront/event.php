@@ -1,4 +1,4 @@
-<?php include_once '../layout/header.php'?>
+<?php include_once $_SERVER['DOCUMENT_ROOT']."/App/Views/layout/header.php"?>
         <!--Page Header Start-->
         <section class="page-header">
             <div class="page-header__bg" style="background-image: url(../assets1/images/backgrounds/page-header-bg.jpg);">
@@ -399,4 +399,4 @@
         </section>
         <!-- Event Page End -->
         
-<?php include_once '../layout/footer.php'?>
+        <?php include_once $_SERVER['DOCUMENT_ROOT']."/App/Views/layout/footer.php"?>
