@@ -20,6 +20,20 @@ class AdminController{
     public function verifyOrganizer(){
 
         $organizers =  UserManager::getOrganizers();
+
+
+
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+
+            $id = $_POST['id'] ?? null; 
+            $newStatus = $_POST['status'] ?? null; 
+    
+            if ($id && $newStatus) {
+                UserManager::updateStatus($id, $newStatus);
+            } else {
+                echo "Error: Missing user ID or status.";
+            }
+        }
         
         require_once $_SERVER['DOCUMENT_ROOT']."/App/Views/admin/OrganaizerVerification.php";
     }

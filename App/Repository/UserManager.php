@@ -10,7 +10,7 @@ class UserManager {
     
     public static function getOrganizers() {
         self::$pdo = Database::getConnection();
-        $stmt = self::$pdo->prepare('SELECT name, email, role, status, created_at FROM users WHERE role = :organizer');
+        $stmt = self::$pdo->prepare('SELECT id, name, email, role, status, created_at FROM users WHERE role = :organizer');
         $stmt->execute([
             ":organizer"=>"organizer"
         ]);
