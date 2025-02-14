@@ -1,4 +1,8 @@
 <?php
+require_once $_SERVER['DOCUMENT_ROOT'] . "/vendor/autoload.php";
+use App\Repository\UserManager;
+
+$organizers =  UserManager::getOrganizers();
 
 
 ?>
