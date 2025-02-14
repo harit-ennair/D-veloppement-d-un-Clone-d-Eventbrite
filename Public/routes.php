@@ -5,7 +5,6 @@ use App\Controllers\Pages;
 use App\Controllers\AuthController;
 use App\Controllers\AdminController;
 use App\Controllers\OrganizerController;
-use App\Controllers\C_password;
 
 
 // return $routes = [

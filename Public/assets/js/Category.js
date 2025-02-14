@@ -103,7 +103,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 nameCell.textContent = category.name;
 
                 const actionCell = document.createElement("td");
-                actionCell.className = "space-x-2"; // ⬅️ إضافة تباعد بين الأزرار
+                actionCell.className = "space-x-2"; 
 
                 const editButton = document.createElement("button");
                 editButton.textContent = "Edit";

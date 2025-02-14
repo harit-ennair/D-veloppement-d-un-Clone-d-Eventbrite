@@ -43,5 +43,48 @@ class UserManager {
             return $stmt->rowCount() > 0;
      
     }
+
+
+    public static function getUsers() {
+        self::$pdo = Database::getConnection();
+        $stmt = self::$pdo->prepare('SELECT * FROM users');
+        $stmt->execute();
+        return $stmt->fetchAll();
+        }
+
+
+    public static function banUser($id) {
+        self::$pdo = Database::getConnection();
+        $stmt = self::$pdo->prepare('UPDATE users SET status = :banned, updated_at = CURRENT_TIMESTAMP WHERE id = :id');
+        $stmt->execute([
+            ":banned" => "banned",
+            ":id" => $id
+        ]);
+        return $stmt->rowCount() > 0;
+    }
+
+
+    public static function unbanUser($id) {
+        self::$pdo = Database::getConnection();
+        $stmt = self::$pdo->prepare('UPDATE users SET status = :active, updated_at = CURRENT_TIMESTAMP WHERE id = :id');
+        $stmt->execute([
+            ":active" => "active",
+            ":id" => $id
+        ]);
+        return $stmt->rowCount() > 0;
+    }
+    
+public static function inactivUser ($id){
+    self::$pdo=Database::getConnection();
+    $stmt=self::$pdo->prepare('UPDATE users SET status=:inactive, updated_at=CURRENT_TIMESTAMP WHERE id=:id');
+    $stmt->execute([
+        ":inactive"=>"inactive",
+        ":id"=>$id
+    ]);
+    return $stmt->rowCount()>0;
+}
+
+    
+
 }
 

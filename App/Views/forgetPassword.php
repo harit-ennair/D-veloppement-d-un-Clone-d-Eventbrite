@@ -28,7 +28,7 @@
             </div>
         </div>
     </div>
-    
+
 </div>
 	<!-- end wrapper -->
 <?php include_once 'layoutDashboard/footer.php'?>
