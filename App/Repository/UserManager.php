@@ -7,17 +7,6 @@ use Config\Database;
 class UserManager {
     private static $pdo;
 
-    // public static function getOrganizers() {
-    //     self::$pdo = Database::getConnection();
-    //     $stmt = self::$pdo->prepare('SELECT * , COUNT(id) as user_count FROM users WHERE role = :organizer and status = :inactive');
-    //     $stmt->execute([
-    //         ":organizer"=>"organizer",
-    //         ":inactive"=>"inactive"
-    //     ]);
-    //     return $stmt->fetchAll();
-    // }
-
-
     public static function getOrganizers() {
         self::$pdo = Database::getConnection();
         $stmt = self::$pdo->prepare('
