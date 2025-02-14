@@ -24,6 +24,9 @@ class ControllerFactory
             case 'C_password':
                 $controllerName = 'App\\Controllers\\C_password';
                 return new $controllerName($db, $session);
+            case 'App\Controllers\OrganizerController':
+                return new $controllerName($session);
+
 
             default:
                 return new $controllerName();

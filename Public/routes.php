@@ -30,6 +30,7 @@ $router->get("/eventsManager",AdminController::class,"eventsManager");
 $router->get("/organizerDashboard",OrganizerController::class,"organizerDashboard");
 $router->get("/OrganizerEvents",OrganizerController::class,"OrganizerEvents");
 $router->get("/addEvent",OrganizerController::class,"addEvent");
+$router->post("/addEvent",OrganizerController::class,"addEvent");
 $router->get("/forgotPassword", C_password::class, "showForgotForm");
 $router->post("/forgotPassword", C_password::class, "forgotPassword");
 $router->get("/resetPassword", C_password::class, "showResetForm");

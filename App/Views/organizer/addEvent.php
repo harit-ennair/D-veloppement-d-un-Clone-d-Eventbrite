@@ -2,11 +2,14 @@
 include_once $_SERVER['DOCUMENT_ROOT'] . '/app/views/organizer/layout/header.php';
 include_once $_SERVER['DOCUMENT_ROOT'] . '/app/views/organizer/layout/sideBar.php';
 include_once $_SERVER['DOCUMENT_ROOT'] . '/app/views/organizer/layout/TNavBar.php';
-
-
+require_once $_SERVER['DOCUMENT_ROOT'] . "/vendor/autoload.php";
+use App\Repository\CategoryManager;
+$categories=CategoryManager::getAllCategories();
+$error=$this->session->get("error")?? "";
+$this->session->remove('error');
 ?>
 <main class="overflow-x-scroll scrollbar-hide flex flex-col justify-between pt-[42px] px-[23px] pb-[28px]">
-  <form action="/router/web.php" method="POST" enctype="multipart/form-data">
+  <form action="" method="POST" enctype="multipart/form-data">
     <input type="hidden" name="url" value="addEvent">
     <input type="hidden" name="Event" value="<?= isset($EventEdit) && !empty($EventEdit) ? $EventEdit['id'] : '' ?>">
 
@@ -22,7 +25,7 @@ include_once $_SERVER['DOCUMENT_ROOT'] . '/app/views/organizer/layout/TNavBar.ph
       <div class="flex justify-between gap-x-5 flex-col xl:flex-row">
         <div class="xl:w-[70%]">
           <div class="mb-12">
-            <h1 class="text-red-600"><?= $error ?? "" ?></h1>
+            <h1 class="text-red-600"><?= $error?? "" ?></h1>
             <p class="text-gray-1100 text-base leading-4 font-medium capitalize mb-[10px] dark:text-gray-dark-1100">
               Event title</p>
             <div class="input-group border rounded-lg border-[#E8EDF2] dark:border-[#313442] sm:min-w-[252px]">
@@ -49,13 +52,13 @@ include_once $_SERVER['DOCUMENT_ROOT'] . '/app/views/organizer/layout/TNavBar.ph
           <div class="mb-12">
             <p class="text-gray-1100 text-base leading-4 font-medium capitalize mb-[10px] dark:text-gray-dark-1100">
               Thumbnail / Gallery</p>
-            <label for="drop-zone" class="cursor-pointer">
+            <label for="drop-zone-image" class="cursor-pointer">
               <div class="border-dashed border-2 text-center border-neutral py-[26px] dark:border-dark-neutral-border">
                 <img class="mx-auto inline-block mb-[15px]" src="/public/assets/images/icons/icon-image.svg"
                   alt="image icon">
                 <p class="text-sm leading-6 text-gray-500 font-normal mb-[5px]">Drop your image here, or browse</p>
                 <p class="leading-6 text-gray-400 text-[13px]">JPG, PNG, and GIF files are allowed</p>
-                <input type="file" id="drop-zone" name="image"
+                <input type="file" id="drop-zone-image" name="image"
                   value="<?= isset($EventEdit) && !empty($EventEdit) ? $EventEdit['Event_img'] : '' ?>" class="hidden"
                   accept="image/jpeg, image/png, image/gif, image/webp" />
               </div>
@@ -64,13 +67,13 @@ include_once $_SERVER['DOCUMENT_ROOT'] . '/app/views/organizer/layout/TNavBar.ph
           <div class="mb-12">
             <p class="text-gray-1100 text-base leading-4 font-medium capitalize mb-[10px] dark:text-gray-dark-1100">
               Video</p>
-            <label for="drop-zone" class="cursor-pointer">
+            <label for="drop-zone-video" class="cursor-pointer">
               <div class="border-dashed border-2 text-center border-neutral py-[26px] dark:border-dark-neutral-border">
                 <img class="mx-auto inline-block mb-[15px]" src="/public/assets/images/icons/icon-video.svg"
                   alt="video icon">
                 <p class="text-sm leading-6 text-gray-500 font-normal mb-[5px]">Drop your video here, or browse</p>
                 <p class="leading-6 text-gray-400 text-[13px]">MP4, AVI, and MOV files are allowed</p>
-                <input type="file" id="drop-zone" name="video"
+                <input type="file" id="drop-zone-video" name="video"
                   value="<?= isset($EventEdit) && !empty($EventEdit) ? $EventEdit['Event_video'] : '' ?>" class="hidden"
                   accept="video/mp4, video/avi, video/mov" />
               </div>
@@ -97,6 +100,7 @@ include_once $_SERVER['DOCUMENT_ROOT'] . '/app/views/organizer/layout/TNavBar.ph
               <select
                 class="bg-transparent text-sm leading-4 text-gray-400 h-fit min-h-fit py-4 focus:outline-none pl-[13px] border rounded-lg border-[#E8EDF2] dark:border-[#313442] dark:text-gray-dark-400"
                 name="categories" id="cat">
+                <option value="">select a Category</option>
                 <?php
                 foreach ($categories as $category) {
                   if (isset($EventEdit) && !empty($EventEdit)) {
@@ -135,9 +139,15 @@ include_once $_SERVER['DOCUMENT_ROOT'] . '/app/views/organizer/layout/TNavBar.ph
     </label>
     <label for="Capacity" class="cursor-pointer text-white mb-2">Capacity <br/>
       <input
-        class="input w-full bg-transparent text-sm leading-4 border-2 border-gray-500 text-gray-400 h-fit min-h-fit py-4 focus:outline-none pl-[13px] dark:text-gray-dark-400 placeholder:text-inherit"
-        name="Capacity" id="Capacity" type="text" value="<?= isset($EventEdit) && !empty($EventEdit) ? $EventEdit['title'] : '' ?>"
-        placeholder="Add Contact Phone">
+      class="input w-full bg-transparent text-sm leading-4 border-2 border-gray-500 text-gray-400 h-fit min-h-fit py-4 focus:outline-none pl-[13px] dark:text-gray-dark-400 placeholder:text-inherit"
+      name="Capacity" id="Capacity" type="text" value="<?= isset($EventEdit) && !empty($EventEdit) ? $EventEdit['title'] : '' ?>"
+      placeholder="Add Contact Phone">
+    </label>
+    <label for="event_date" class="cursor-pointer text-white mb-2">Event Date <br/>
+      <input
+      class="input w-full bg-transparent text-sm leading-4 border-2 border-gray-500 text-gray-400 h-fit min-h-fit py-4 focus:outline-none pl-[13px] dark:text-gray-dark-400 placeholder:text-inherit"
+      name="event_date" id="event_date" type="date" 
+      value="<?= isset($EventEdit) && !empty($EventEdit) ? $EventEdit['event_date'] : '' ?>">
     </label>
   </div>
 </div>
@@ -212,5 +222,6 @@ include_once $_SERVER['DOCUMENT_ROOT'] . '/app/views/organizer/layout/TNavBar.ph
 
 
 <?php
+
 include_once $_SERVER['DOCUMENT_ROOT'] . '/app/views/organizer/layout/footer.php';
 ?>
