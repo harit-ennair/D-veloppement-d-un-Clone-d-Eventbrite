@@ -1,7 +1,4 @@
-<?php
 
-
-?>
 <div class="wrapper mx-auto text-gray-900 font-normal grid scrollbar-hide grid-cols-[257px,1fr] grid-rows-[auto,1fr]" id="layout">
 <aside class="bg-white row-span-2 border-r border-neutral relative flex flex-col justify-between p-[25px] dark:bg-dark-neutral-bg dark:border-dark-neutral-border"> 
         <div class="absolute p-2 border-neutral right-0 border bg-white rounded-full cursor-pointer duration-300 translate-x-1/2 hover:opacity-75 dark:bg-dark-neutral-bg dark:border-dark-neutral-border" id="sidebar-btn"><img src="/public/assets/images/icons/icon-arrow-left.svg" alt="left chevron icon"></div>
@@ -17,13 +14,13 @@
                 <ul class="text-gray-300 child-menu z-10 pl-[53px]">
                   <li class="pb-2 transition-opacity duration-150 hover:opacity-75"><a class="text-normal" href="/admin">Dashboard</a></li>
                   <li class="pb-2 transition-opacity duration-150 hover:opacity-75"><a class="text-normal" href="/verifyOrganizer">NEW Organizer  <?php foreach ($organizers as $customer): ?>
-                                                                                                                                                            <tr >
-                                                                                                                                                              <td >
-                                                                                                                                                                <?= $customer['user_count']."+"; ?> 
-                                                                                                                                                              </td>
-                                                                                                                                                            </tr>
-                                                                                                                                                          <?php endforeach; ?>
-                                                                                                                                                        </a></li></a></li>
+                      <tr >
+                        <td >
+                          <?= $customer['user_count']."+"; ?> 
+                        </td>
+                      </tr>
+                    <?php endforeach; ?>
+                  </a></li></a></li>
                   <li class="pb-2 transition-opacity duration-150 hover:opacity-75 show-add-project"><a class="text-normal" href="/eventVerify">NEW Course Verify</a></li>
                   <li class="pb-2 transition-opacity duration-150 hover:opacity-75"><a class="text-normal" href="/category">Categories/Tags</a></li>
                   <li class="pb-2 transition-opacity duration-150 hover:opacity-75 show-add-project"><a class="text-normal" href="/userManager">User Manager</a></li>
