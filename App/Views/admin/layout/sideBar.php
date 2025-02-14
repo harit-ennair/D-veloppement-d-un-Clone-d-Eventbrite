@@ -1,4 +1,8 @@
 <?php
+require_once $_SERVER['DOCUMENT_ROOT'] . "/vendor/autoload.php";
+use App\Repository\UserManager;
+
+$organizers =  UserManager::getOrganizers();
 
 
 ?>
@@ -24,7 +28,13 @@
                                                                                                                                                             </tr>
                                                                                                                                                           <?php endforeach; ?>
                                                                                                                                                         </a></li></a></li>
-                  <li class="pb-2 transition-opacity duration-150 hover:opacity-75 show-add-project"><a class="text-normal" href="/eventVerify">NEW Course Verify</a></li>
+                  <li class="pb-2 transition-opacity duration-150 hover:opacity-75 show-add-project"><a class="text-normal" href="/eventVerify">NEW Event  <?php foreach ($event as $customer): ?>
+                                                                                                                                                            <tr >
+                                                                                                                                                              <td >
+                                                                                                                                                                <?= $customer['user_count']."+"; ?> 
+                                                                                                                                                              </td>
+                                                                                                                                                            </tr>
+                                                                                                                                                          <?php endforeach; ?></a></li>
                   <li class="pb-2 transition-opacity duration-150 hover:opacity-75"><a class="text-normal" href="/category">Categories/Tags</a></li>
                   <li class="pb-2 transition-opacity duration-150 hover:opacity-75 show-add-project"><a class="text-normal" href="/userManager">User Manager</a></li>
                   <li class="pb-2 transition-opacity duration-150 hover:opacity-75 show-add-project"><a class="text-normal" href="/eventsManager">Course Manager</a></li>

@@ -80,7 +80,7 @@ print_r($_SESSION);
 							</div>
 						</div>
 					</div>
-				 </div>
+				</div>
 				<!--end row-->
 			</div>
 		</div>

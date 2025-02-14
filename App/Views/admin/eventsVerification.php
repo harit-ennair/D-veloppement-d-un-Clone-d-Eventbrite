@@ -169,6 +169,43 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/app/views/admin/layout/TNavBar.php';
                 </tr>
               </thead>
               <tbody id="tbody">
+
+              <?php foreach ($events as $customer): ?>
+            <tr class="border-b border-neutral dark:border-dark-neutral-border pb-[15px]">
+              <td class="font-normal text-normal text-gray-400 text-left pb-[15px] dark:text-gray-dark-400">
+                <?= $customer['name']; ?>
+              </td>
+              <td class="font-normal text-normal text-gray-400 text-left pb-[15px] dark:text-gray-dark-400">
+                <?= $customer['email']; ?>
+              </td>
+              <td class="font-normal text-normal text-gray-400 text-left pb-[15px] dark:text-gray-dark-400">
+                <?= $customer['role']; ?>
+              </td>
+              <td class="font-normal text-normal text-gray-400 text-left pb-[15px] dark:text-gray-dark-400">
+                <?= $customer['status']; ?>
+              </td>
+              <td class="font-normal text-normal text-gray-400 text-left pb-[15px] dark:text-gray-dark-400">
+                <?= $customer['created_at']; ?>
+              </td>
+              <td class="font-normal text-normal text-gray-400 text-center pb-[15px] dark:text-gray-dark-400">
+
+                <form  method="POST" style="display:inline;">
+                  <input type="hidden" name="id" value="<?= $customer['id']; ?>">
+                  <input type="hidden" name="status" value="active">
+                  <button type="submit" class="text-blue-500 hover:text-blue-700">Activate</button>
+                </form>
+
+                <form method="POST" style="display:inline;">
+                  <input type="hidden" name="id" value="<?= $customer['id']; ?>">
+                  <input type="hidden" name="status" value="banned">
+                  <button type="submit" class="text-red-500 hover:text-red-700">Ban</button>
+                </form>
+                
+              </td>
+            </tr>
+          <?php endforeach; ?>
+
+
                                 
               </tbody>
             </table>
