@@ -168,7 +168,7 @@
                                     </a>
                                 </div>
                             </div>
-                            
+                            <?php if($_SESSION){?>
                             <?php if($_SESSION['user']['role'] == 'organizer'){ ?>
                             <div class="main-menu__btn-box">
                                 <a href="/organizerDashboard" class="main-menu__btn thm-btn">Dashboard<span
@@ -179,7 +179,7 @@
                                 <a href="/event" class="main-menu__btn thm-btn">join us <span
                                         class="icon-arrow-right"></span> </a>
                             </div>
-                            <?php }else{?>
+                            <?php }}else{?>
                                 <div class="main-menu__btn-box">
                                 <a href="/logIn" class="main-menu__btn thm-btn">join us <span
                                         class="icon-arrow-right"></span> </a>
