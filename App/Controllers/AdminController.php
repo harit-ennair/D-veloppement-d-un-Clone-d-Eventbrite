@@ -10,19 +10,15 @@ use App\Models\Organizer;
 use App\Models\Participant;
 use App\Repository\UserManager;
 
-
-class AdminController{
-    public function adminDashboard(){
-
+class AdminController {
+    public function adminDashboard() {
         require_once $_SERVER['DOCUMENT_ROOT']."/App/Views/admin/adminDashboard.php";
-        
     }
-    public function verifyOrganizer(){
 
+    public function verifyOrganizer() {
         $organizers =  UserManager::getOrganizers();
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-
             $id = $_POST['id'] ?? null; 
             $newStatus = $_POST['status'] ?? null; 
     
@@ -35,17 +31,52 @@ class AdminController{
         
         require_once $_SERVER['DOCUMENT_ROOT']."/App/Views/admin/OrganaizerVerification.php";
     }
-    public function eventVerify(){
-        require_once $_SERVER['DOCUMENT_ROOT']."/App/Views/admin/eventsVerification.php";
 
+    public function updateUserStatus() {
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $id = $_POST['id'] ?? null; 
+            $newStatus = $_POST['status'] ?? null; 
+            if ($id && $newStatus) {
+                $success = UserManager::updateStatus($id, $newStatus);
+                if ($success) {
+                    echo "success";
+                } else {
+                    echo "Failed to update user status";
+                }
+            } else {
+                echo "Error: Missing user ID or status";
+            }
+            exit;
+        }
     }
-    public function category(){
+
+    public function eventVerify() {
+        require_once $_SERVER['DOCUMENT_ROOT']."/App/Views/admin/eventsVerification.php";
+    }
+
+    public function category() {
         require_once $_SERVER['DOCUMENT_ROOT']."/App/Views/admin/catTag.php";
     }
-    public function userManager(){
+
+    public function userManager() {
+        $users = UserManager::getUsers();
+        if (isset($_POST['user_id']) && isset($_POST['action'])) {
+            $userId = $_POST['user_id'];
+            $action = $_POST['action']; 
+    
+            if ($action === 'ban') {
+                UserManager::banUser($userId);
+            } elseif ($action === 'unban') {
+                UserManager::unbanUser($userId);
+            } elseif ($action === 'inactivate') {
+                UserManager::inactivUser($userId);
+            }
+        }
+    
         require_once $_SERVER['DOCUMENT_ROOT']."/App/Views/admin/Users.php";
     }
-    public function eventsManager(){
+    
+    public function eventsManager() {
         require_once $_SERVER['DOCUMENT_ROOT']."/App/Views/admin/eventsManager.php";
     }
 }

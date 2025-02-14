@@ -10,7 +10,7 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/app/views/admin/layout/TNavBar.php';
 
     <div class="w-full flex flex-col max-w-[531px] gap-[30px] mb-[60px] lg:mb-[166px]">
         <div class="w-full">
-            <form id="catForm" method="POST">
+            <form id="catForm"method="POST">
             <p class="text-gray-1100 text-base leading-4 font-medium capitalize mb-[10px] dark:text-gray-dark-1100">Category Name</p>
             <div class="input-group border rounded-lg border-[#E8EDF2] dark:border-[#313442] sm:min-w-[252px]">
                 <input type="hidden" name="url" value="addCatTag">

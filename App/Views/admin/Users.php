@@ -3,6 +3,19 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/app/views/admin/layout/header.php';
 include_once $_SERVER['DOCUMENT_ROOT'].'/app/views/admin/layout/sideBar.php';
 include_once $_SERVER['DOCUMENT_ROOT'].'/app/views/admin/layout/TNavBar.php';
 
+
+
+// function getStatusButtonText($status) {
+//     switch ($status) {
+//         case 'active': return 'Ban';
+//         case 'banned': return 'Unban';
+//         case 'inactive': return 'Activate';
+//         default: return 'Unknown';
+//     }
+// }
+
+
+
 ?>
 <main class="overflow-x-scroll scrollbar-hide flex flex-col justify-between pt-[42px] px-[23px] pb-[28px]">
         <div>
@@ -167,11 +180,38 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/app/views/admin/layout/TNavBar.php';
                   <th class="font-normal text-normal text-gray-400 text-left pb-[15px] dark:text-gray-dark-400">Joined</th>
                   <th class="font-normal text-normal text-gray-400 text-center pb-[15px] dark:text-gray-dark-400">Actions</th>
                 </tr>
-              </thead>
-              <tbody id="tbody">
-                                
-              </tbody>
-            </table>
+                <tbody id="tbody">
+    <?php foreach ($users as $user): ?>
+    <tr class="border-b border-neutral dark:border-dark-neutral-border">
+        <td class="text-gray-1100 dark:text-gray-dark-1100"><?php echo htmlspecialchars($user['name']); ?></td>
+        <td class="text-gray-1100 dark:text-gray-dark-1100"><?php echo htmlspecialchars($user['email']); ?></td>
+        <td class="text-gray-1100 dark:text-gray-dark-1100"><?php echo htmlspecialchars($user['role']); ?></td>
+        <td class="text-gray-1100 dark:text-gray-dark-1100 status-cell" data-id="<?php echo $user['id']; ?>">
+            <?php echo htmlspecialchars($user['status']); ?>
+        </td>
+        <td class="text-gray-1100 dark:text-gray-dark-1100"><?php echo htmlspecialchars($user['created_at']); ?></td>
+        <td class="text-center">
+            <!-- زر تفعيل -->
+            <button class="status-btn text-sm px-4 py-1 rounded text-white bg-green-500"
+                data-id="<?php echo $user['id']; ?>"
+                data-status="active"
+                onclick="toggleUserStatus(this)">
+                Activate
+            </button>
+
+            <button class="status-btn text-sm px-4 py-1 rounded text-white bg-red-500"
+                data-id="<?php echo $user['id']; ?>"
+                data-status="banned"
+                onclick="toggleUserStatus(this)">
+                Ban
+            </button>
+        </td>
+    </tr>
+    <?php endforeach; ?>
+</tbody>
+
+
+
           </div>
           <div class="flex items-center gap-x-10">
             <div>
@@ -493,7 +533,11 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/app/views/admin/layout/TNavBar.php';
         </footer>
       </main>
 
+      <script src=" Public/assets/js/manageUser.js"></script>
+     
       <script src="/public/js/admin/Users.js"></script>
+
+
 <?php
 include_once $_SERVER['DOCUMENT_ROOT'].'/app/views/admin/layout/footer.php';
 ?>
