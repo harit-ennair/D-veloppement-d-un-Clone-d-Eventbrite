@@ -20,6 +20,7 @@ class OrganizerController{
         require_once $_SERVER['DOCUMENT_ROOT']."/App/Views/organizer/organizerDashboard.php";
     }
     public function OrganizerEvents(){
+        $events=EventManager::getEvents();
         require_once $_SERVER['DOCUMENT_ROOT']."/App/Views/organizer/Events.php";
     }
     public function addEvent(){
@@ -38,7 +39,9 @@ class OrganizerController{
                     'contact_phone'=>$_POST['contact-phone'],
                     'price'=>$_POST['Price'],
                     'capacity'=>$_POST['Capacity'],
-                    'date'=>$_POST['event_date']
+                    'date'=>$_POST['event_date'],
+                    'location'=>$_POST['localisation'],
+                    'status'=>'pending'
                 ];
                 $image=$_FILES['image'];
                 if(empty($image['name'])){
@@ -113,4 +116,5 @@ class OrganizerController{
         }
         require_once $_SERVER['DOCUMENT_ROOT']."/App/Views/organizer/addEvent.php";
     }
+    
 }
