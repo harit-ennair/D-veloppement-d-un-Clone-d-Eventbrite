@@ -19,4 +19,15 @@ class CategoryManager{
         throw new \Exception($th->getMessage());
     }
     }
+    public static function getAllCategories() {
+        self::$pdo=Database::getConnection();
+        try {
+            $query = "SELECT * FROM categories ORDER BY name";
+            $stmt = self::$pdo->prepare($query);
+            $stmt->execute();
+            return $stmt->fetchAll(\PDO::FETCH_ASSOC);
+        } catch (\PDOException $e) {
+            return [];
+        }
+    }
 }

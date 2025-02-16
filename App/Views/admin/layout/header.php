@@ -19,6 +19,5 @@
     <script src="https://cdn.jsdelivr.net/npm/summernote@0.9.0/dist/summernote-lite.min.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
 
-
 </head>
   <body class="w-screen relative overflow-x-hidden min-h-screen bg-gray-100 scrollbar-hide course-dashboard-page dark:bg-[#000]">

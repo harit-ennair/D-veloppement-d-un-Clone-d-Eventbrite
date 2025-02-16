@@ -1,4 +1,4 @@
-<?php include_once '../layout/header.php'?>
+<?php include_once $_SERVER['DOCUMENT_ROOT']."/App/Views/layout/header.php"?>
 
  <!--Team Page Start-->
  <section class="team-page">
@@ -9,7 +9,7 @@
                         <div class="team-one__single">
                             <div class="team-one__img-box">
                                 <div class="team-one__img">
-                                    <img src="../assets1/images/teamImage/1101-1727859750.jpg" alt="">
+                                    <img src="/Public/assets1/images/teamImage/1101-1727859750.jpg" alt="">
                                     <div class="team-one__content">
                                         <h4 class="team-one__name"><a href="team-details.html">Dwiza</a></h4>
                                         <p class="team-one__sub-title">Front-end</p>
@@ -32,7 +32,7 @@
                         <div class="team-one__single">
                             <div class="team-one__img-box">
                                 <div class="team-one__img">
-                                    <img src="../assets1/images/teamImage/1337-1727971502 (1).jpg" alt="">
+                                    <img src="/Public/assets1/images/teamImage/1337-1727971502 (1).jpg" alt="">
                                     <div class="team-one__content">
                                         <h4 class="team-one__name"><a href="team-details.html">Harit</a></h4>
                                         <p class="team-one__sub-title">Conception</p>
@@ -55,7 +55,7 @@
                         <div class="team-one__single">
                             <div class="team-one__img-box">
                                 <div class="team-one__img">
-                                    <img src="../assets1/images/teamImage/1131-1727859974.jpg" alt="">
+                                    <img src="/Public/assets1/images/teamImage/1131-1727859974.jpg" alt="">
                                     <div class="team-one__content">
                                         <h4 class="team-one__name"><a href="team-details.html">Aymane</a></h4>
                                         <p class="team-one__sub-title">Back-end</p>
@@ -78,7 +78,7 @@
                         <div class="team-one__single">
                             <div class="team-one__img-box">
                                 <div class="team-one__img">
-                                    <img src="../assets1/images/teamImage/1289-1727966708.jpg" alt="">
+                                    <img src="/Public/assets1/images/teamImage/1289-1727966708.jpg" alt="">
                                     <div class="team-one__content">
                                         <h4 class="team-one__name"><a href="team-details.html">Hamza</a></h4>
                                         <p class="team-one__sub-title">Motivation</p>
@@ -96,4 +96,4 @@
                     <!-- Team One Single End -->
 
         
-<?php include_once '../layout/footer.php'?>
+                    <?php include_once $_SERVER['DOCUMENT_ROOT']."/App/Views/layout/footer.php"?>
