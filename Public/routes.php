@@ -5,6 +5,7 @@ use App\Controllers\Pages;
 use App\Controllers\AuthController;
 use App\Controllers\AdminController;
 use App\Controllers\OrganizerController;
+use App\Repository\EventManager;
 
 
 // return $routes = [
@@ -39,6 +40,8 @@ $router->get("/faq", pages::class, "faq");
 $router->get("/comingSoon", pages::class, "comingSoon");
 $router->get("/contact", pages::class, "contact");
 $router->get("/event", pages::class, "event");
+$router->get("/deleteEvent", OrganizerController::class, "deleteEvent");
+
 
 
 

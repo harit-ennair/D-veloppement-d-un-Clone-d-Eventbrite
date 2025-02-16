@@ -118,4 +118,8 @@ class OrganizerController{
         require_once $_SERVER['DOCUMENT_ROOT']."/App/Views/organizer/addEvent.php";
     }
     
+    public function deleteEvent(){
+        $id=$_GET['delete'];
+        EventManager::deleteEvent($id);
+    }
 }

@@ -95,4 +95,26 @@ GROUP BY
             throw new \Exception("Failed to update event: " . $e->getMessage());
         }
     }
+    public static function deleteEvent($id){
+        try {
+            self::$pdo = Database::getConnection();
+            self::$pdo->beginTransaction();
+            
+            // First delete from registrations if you have any
+            $sql = "DELETE FROM tickets WHERE event_id = :event_id";
+            $stmt = self::$pdo->prepare($sql);
+            $stmt->execute(['event_id' => $id]);
+
+            // Then delete the event
+            $sql = "DELETE FROM events WHERE id = :id";
+            $stmt = self::$pdo->prepare($sql);
+            $stmt->execute(['id' => $id]);
+            
+            self::$pdo->commit();
+            return true;
+        } catch(\Exception $e) {
+            self::$pdo->rollBack();
+            throw new \Exception("Failed to delete event: " . $e->getMessage());
+        }
+    }
 }
