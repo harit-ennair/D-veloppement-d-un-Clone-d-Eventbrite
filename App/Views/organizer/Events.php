@@ -77,7 +77,7 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/app/views/organizer/layout/TNavBar.php'
     confirmButtonText: "Yes, delete it!"
 }).then(async (result) => {
     if (result.isConfirmed) {
-      await fetch(`/app/Controllers/organizerAPI.php?delete=${id}`);
+      await fetch(`/deleteEvent?delete=${id}`);
       Swal.fire({
         title: "Deleted!",
         text: "Your course has been deleted.",
