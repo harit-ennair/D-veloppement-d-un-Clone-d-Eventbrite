@@ -69,10 +69,30 @@ GROUP BY
     categories.name;";
             $stmt = self::$pdo->prepare($sql);
             $stmt->execute(['organizer_id' => $organizer_id,
-        "event_id"=>$event_id]);
+                                    "event_id"=>$event_id]);
             return $stmt->fetch(\PDO::FETCH_ASSOC);
         } catch(\Exception $e) {
-            throw new \Exception("Failed to fetch courses: " . $e->getMessage());
+            throw new \Exception("Failed to fetch Event: " . $e->getMessage());
+        }
+    }
+
+    public static function updateEvent($data, $event_id){
+        try {
+            self::$pdo = Database::getConnection();
+            $updates = [];
+            foreach($data as $key => $value) {
+                $updates[] = "$key = ?";
+            }
+            
+            $sql = "UPDATE events SET " . implode(", ", $updates) . " WHERE id = ?";
+            
+            $stmt = self::$pdo->prepare($sql);
+            $values = array_values($data);
+            $values[] = $event_id;
+            
+            return $stmt->execute($values);
+        } catch(\Exception $e) {
+            throw new \Exception("Failed to update event: " . $e->getMessage());
         }
     }
 }

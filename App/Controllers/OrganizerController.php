@@ -45,11 +45,10 @@ class OrganizerController{
                 ];
                 $image=$_FILES['image'];
                 if(empty($image['name'])){
-                    // $_SESSION['error']="Image is required";
                     $this->session->set('error',"Image is required");
-                    if(isset($_POST['course'])&& !empty($_POST['course'])){
-                        $id=$_POST['course'];
-                        header("location:/addEvent?course=$id");
+                    if(isset($_POST['Event'])&& !empty($_POST['Event'])){
+                        $id=$_POST['Event'];
+                        header("location:/addEvent?Event=$id");
                         return;
                     } else {
                         header("location:/addEvent");
@@ -57,14 +56,14 @@ class OrganizerController{
                     }
                 }
                 foreach($data as $key=>$value){
-                    if($key=='course'||$key=='tags'||$key=='submit'){
+                    if($key=='Event'||$key=='tags'||$key=='submit'){
                         continue;
                     }
                     if(empty($value)){
                         $this->session->set('error',"$key is required");
-                        if(isset($_POST['course'])&& !empty($_POST['course'])){
-                            $id=$_POST['course'];
-                            header("location:/addEvent?course=$id");
+                        if(isset($_POST['Event'])&& !empty($_POST['Event'])){
+                            $id=$_POST['Event'];
+                            header("location:/addEvent?Event=$id");
                             return;
                         } else {
                             header("location:/addEvent");
@@ -75,9 +74,9 @@ class OrganizerController{
                 $video=$_FILES['video'];
                 if(empty($video['name'])){
                     $_SESSION['error']="video is required";
-                    if(isset($_POST['course'])&& !empty($_POST['course'])){
-                        $id=$_POST['course'];
-                        header("location:/addEvent?course=$id");
+                    if(isset($_POST['Event'])&& !empty($_POST['Event'])){
+                        $id=$_POST['Event'];
+                        header("location:/addEvent?Event=$id");
                         return;
                     } else {
                         header("location:/addEvent");
@@ -97,10 +96,12 @@ class OrganizerController{
                 print_r($data);
                 // print_r($_POST);
                 // print_r($_GET);
-                if(isset($_POST['course'])&& !empty($_POST['course'])){
-                    $id=$_POST['course'];
-                    // teacherManager::updateCourse($data,$tags,$id);
-                    header("location:/YouDemy/app/views/pages/teacher/courses.php");
+                if(isset($_POST['Event'])&& !empty($_POST['Event'])){
+                    $id=$_POST['Event'];
+                    EventManager::updateEvent($data,$id);
+                    // header("location:/YouDemy/app/views/pages/teacher/Events.php");
+                    header("location:/OrganizerEvents");
+
                 } else {
                     // print_r($data);
                     try{

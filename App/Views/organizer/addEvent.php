@@ -29,7 +29,7 @@ $EventEdit=EventManager::getEventDetail($this->session->get("user","id"),$event_
       <div class="flex justify-between gap-x-5 flex-col xl:flex-row">
         <div class="xl:w-[70%]">
           <div class="mb-12">
-            <h1 class="text-red-600"><?= $error?? "" ?></h1>
+            <h1 class="text-red-600" style="color:red;"><?= $error?? "" ?></h1>
             <p class="text-gray-1100 text-base leading-4 font-medium capitalize mb-[10px] dark:text-gray-dark-1100">
               Event title</p>
             <div class="input-group border rounded-lg border-[#E8EDF2] dark:border-[#313442] sm:min-w-[252px]">
