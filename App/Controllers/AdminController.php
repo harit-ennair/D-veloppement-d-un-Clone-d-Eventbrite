@@ -9,6 +9,7 @@ use Core\Session;
 use App\Models\Organizer;
 use App\Models\Participant;
 use App\Repository\UserManager;
+use App\Repository\eventManager;
 
 class AdminController {
     public function adminDashboard() {
@@ -75,8 +76,30 @@ class AdminController {
     
         require_once $_SERVER['DOCUMENT_ROOT']."/App/Views/admin/Users.php";
     }
-    
     public function eventsManager() {
+        $events = EventManager::showEvents();
+        
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            if (isset($_POST['id']) && isset($_POST['status'])) {
+                try {
+                    $id = $_POST['id'];
+                    $status = $_POST['status'];
+                    
+                    // Use the corrected method name from EventManager
+                    $success = EventManager::updateStatus($id, $status);
+                    
+                    if ($success) {
+                        echo "success";
+                    } else {
+                        echo "No changes made to the event status";
+                    }
+                } catch (Exception $e) {
+                    echo "Error: " . $e->getMessage();
+                }
+                exit;
+            }
+        }
+        
         require_once $_SERVER['DOCUMENT_ROOT']."/App/Views/admin/eventsManager.php";
     }
 }

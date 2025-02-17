@@ -157,21 +157,39 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/app/views/admin/layout/TNavBar.php';
                 </ul>
               </div>
             </div>
-            <table class="w-full min-w-[900px]">
-              <thead>
-                <tr class="border-b border-neutral dark:border-dark-neutral-border pb-[15px]"> 
-                  <th class="font-normal text-normal text-gray-400 text-left pb-[15px] dark:text-gray-dark-400">Course</th>
-                  <th class="font-normal text-normal text-gray-400 text-left pb-[15px] dark:text-gray-dark-400">description</th>
-                  <th class="font-normal text-normal text-gray-400 text-left pb-[15px] dark:text-gray-dark-400">Teacher</th>
-                  <th class="font-normal text-normal text-gray-400 text-left pb-[15px] dark:text-gray-dark-400">Status</th>
-                  <th class="font-normal text-normal text-gray-400 text-left pb-[15px] dark:text-gray-dark-400">Created</th>
-                  <th class="font-normal text-normal text-gray-400 text-center pb-[15px] dark:text-gray-dark-400">Actions</th>
-                </tr>
-              </thead>
-              <tbody id="tbody">
-                                
-              </tbody>
-            </table>
+            <table class="w-full min-w-[900px] bg-white shadow-md rounded-lg overflow-hidden">
+    <thead class="bg-blue-600 text-white">
+        <tr>
+            <th class="py-3 px-4 text-left">Nom</th>
+            <th class="py-3 px-4 text-left">Date</th>
+            <th class="py-3 px-4 text-left">Lieu</th>
+            <th class="py-3 px-4 text-left">Statut</th>
+            <th class="py-3 px-4 text-center">Action</th>
+        </tr>
+    </thead>
+    <tbody class="divide-y divide-gray-200">
+        <?php foreach ($events as $event): ?>
+        <tr class="hover:bg-gray-100 transition">
+            <td class="py-3 px-4"><?= htmlspecialchars($event['title']); ?></td>
+            <td class="py-3 px-4"><?= htmlspecialchars($event['date']); ?></td>
+            <td class="py-3 px-4"><?= htmlspecialchars($event['location']); ?></td>
+            <td class="py-3 px-4">
+    <select 
+        class="border rounded px-2 py-1 bg-gray-100 hover:bg-gray-200 focus:ring focus:ring-blue-300 transition cursor-pointer" 
+        data-id="<?= $event['id']; ?>">
+        <option value="active" <?= $event['status'] === 'active' ? 'selected' : ''; ?>>Active</option>
+        <option value="pending" <?= $event['status'] === 'pending' ? 'selected' : ''; ?>>Pending</option>
+        <option value="completed" <?= $event['status'] === 'completed' ? 'selected' : ''; ?>>Completed</option>
+        <option value="cancelled" <?= $event['status'] === 'cancelled' ? 'selected' : ''; ?>>Cancelled</option>
+    </select>
+</td>
+       =
+            </td>
+        </tr>
+        <?php endforeach; ?>
+    </tbody>
+</table>
+
           </div>
           <div class="flex items-center gap-x-10">
             <div>
@@ -494,6 +512,7 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/app/views/admin/layout/TNavBar.php';
       </main>
 
       <script src="/public/js/admin/courseManager.js"></script>
+        <script src="/public/js/assets/manageevnet.js" ></script>
 <?php
 include_once $_SERVER['DOCUMENT_ROOT'].'/app/views/admin/layout/footer.php';
 ?>
